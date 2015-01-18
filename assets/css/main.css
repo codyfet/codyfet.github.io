@@ -276,6 +276,11 @@ a:after {
 	.slick-list table {
 		font-size: 15px;
 	}
+	
+	.author{
+		text-align: center !important;
+		font-size: 12px;
+	}
 }
 .img_{
 	margin: 0 auto;
@@ -484,6 +489,3 @@ button.navbar-toggle{
 	padding-left: 15px;
 }
 
-.author{
-	text-align: center;
-}
