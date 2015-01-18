@@ -272,6 +272,10 @@ a:after {
 	.text {
 		margin-bottom: 25px;
 	}
+	
+	.slick-list table {
+		font-size: 15px;
+	}
 }
 .img_{
 	margin: 0 auto;
