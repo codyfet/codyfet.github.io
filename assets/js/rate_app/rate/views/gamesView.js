@@ -7,10 +7,6 @@ rateApp.GamesView = Backbone.View.extend({
 	template: $("#gamesTemplate").html(),
 	events: {
 
-		// 'click a[class^="col-"]' : 'openColl',
-		// 'click a[class^="text-"]' : 'openText',
-		// 'click .addColl' : 'addColl',
-		// 'click .addText' : 'addText'
 	},
 	
 	initialize: function(){
