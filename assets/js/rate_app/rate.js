@@ -658,42 +658,6 @@ var router = new Router();
 
 Backbone.history.start();
 
-// $(".main_link").click(function(){
-// 	$('.main').html('');
-// 	mainView.render();
-// });
-
-// $(".image_gallery .books_link").click(function(){
-// 	$('.main').html('');
-	
-// 	var mainSection = new rateApp.BooksView({
-// 		model: appModel,
-// 		el: $('.main')
-// 	});
-// 	mainSection.render();
-// });
-
-// $(".image_gallery .films_link").click(function(){
-// 	$('.main').html('');
-	
-// 	var mainSection = new rateApp.FilmsView({
-// 		model: appModel,
-// 		el: $('.main')
-// 	});
-// 	mainSection.render();
-// });
-
-// $(".image_gallery .games_link").click(function(){
-
-// 	$('.main').html('');
-	
-// 	var mainSection = new rateApp.GamesView({
-// 		model: appModel,
-// 		el: $('.main')
-// 	});
-// 	mainSection.render();
-// });
-
 function typicalViewDressing(){
  		
  		$('.years').slick({
