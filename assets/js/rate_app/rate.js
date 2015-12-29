@@ -165,7 +165,7 @@ var multi = {
 			{
 				'title' : "Драйв",
 				'imdb' : 7.80
-			}			
+			}
 		]
 	},
 	'books' : {  // ****************************************************************************** BOOKS
@@ -248,8 +248,8 @@ var multi = {
 					'author' : "Максим Кронгауз",
 					'year' : 2008
 				}
-			]				
-		},	
+			]
+		},
 		'year2013' : {
 			'fiction' : [
 				{
@@ -353,8 +353,8 @@ var multi = {
 					'title' : "Книги в огне",
 					'author' : "Люсьен Поластрон",
 					'year' : 2006
-				}									
-			]				
+				}
+			]
 		},
 		'year2014' : {
 			'fiction' : [
@@ -429,7 +429,7 @@ var multi = {
 					'title' : "Как читать книги",
 					'author' : "Мортимер Адлер",
 					'year' : 1972
-				},				
+				},
 				{
 					'title' : "Улыбка Пол Пота. Путешествие по Камбодже красных кхмеров",
 					'author' : "Петер Фреберг Идлинг",
@@ -460,7 +460,7 @@ var multi = {
 					'author' : "Николай Стариков",
 					'year' : 2014
 				}
-			]				
+			]
 		}
 	},
 	'games' : {   // *********************************************************************************** GAMES
@@ -600,7 +600,7 @@ var multi = {
 				'metacritic' : "-"
 			}
 		]
-	}	
+	}
 };
 
 
@@ -625,7 +625,7 @@ var Router = Backbone.Router.extend({
 
 	'openFilms': function(){
 		$('.main').html('');
-		
+
 		var mainSection = new rateApp.FilmsView({
 			model: mainView.model,
 			el: $('.main')
@@ -635,7 +635,7 @@ var Router = Backbone.Router.extend({
 
 	'openBooks': function(){
 		$('.main').html('');
-		
+
 		var mainSection = new rateApp.BooksView({
 			model: mainView.model,
 			el: $('.main')
@@ -645,21 +645,21 @@ var Router = Backbone.Router.extend({
 
 	'openGames': function(){
 		$('.main').html('');
-		
+
 		var mainSection = new rateApp.GamesView({
 			model: mainView.model,
 			el: $('.main')
 		});
 		mainSection.render();
-	}	
-});	
+	}
+});
 
 var router = new Router();
 
 Backbone.history.start();
 
 function typicalViewDressing(){
- 		
+
  		$('.years').slick({
          	dots: true,
 	        infinite: true,
