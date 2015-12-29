@@ -87,7 +87,6 @@
                                     <% }); %>
                             </tbody>
                         </table>
-
                         <% if(obj.series.length > 0) { %>
                             <div class="table_label">сериалы</div>
                             <table class="table table_films table-striped table-bordered" cellspacing="0" width="100%">
@@ -119,11 +118,13 @@
                                 </tbody>
                             </table>
                         <% } %>
-
+                        <div id="vk_comments"></div>
+                        <% VK.Widgets.Comments("vk_comments", {limit: 20, width: "400", attach: "photo,audio,link"}); %>
                     </div>
-                    <% }); %>
+                <% }); %>
             </div>
         </div>
+
         <div class="righter">
             <img class="arrow_img right_arrow" src="assets/img/next152.png" alt="">
         </div>
