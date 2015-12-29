@@ -88,11 +88,6 @@
                             </tbody>
                         </table>
 
-                        <% console.log("obj"); %>
-                        <% console.log(obj); %>
-                        <% console.log("name"); %>
-                        <% console.log(name); %>
-
                         <% if(obj.series.length > 0) { %>
                             <div class="table_label">сериалы</div>
                             <table class="table table_films table-striped table-bordered" cellspacing="0" width="100%">
@@ -127,6 +122,12 @@
 
                     </div>
                     <% }); %>
+
+            <div id="vk_comments"></div>
+            <script type="text/javascript">
+                VK.Widgets.Comments("vk_comments", {limit: 20, width: "400", attach: "photo,audio,link"});
+            </script>
+
             </div>
         </div>
         <div class="righter">
@@ -327,11 +328,6 @@
         </div>
         <!-- /container -->
     </div>
-
-    <div id="vk_comments"></div>
-    <script type="text/javascript">
-        VK.Widgets.Comments("vk_comments", {limit: 20, width: "400", attach: "photo,audio,link"});
-    </script>
 
     <!-- /social -->
     <div id="f">
