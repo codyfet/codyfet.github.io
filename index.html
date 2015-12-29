@@ -16,6 +16,13 @@
     <script src="assets/js/jquery-1.11.0.js"></script>
     <!-- Slick carousel CSS -->
     <link rel="stylesheet" type="text/css" href="assets/slick/slick.css" />
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
+
+    <!-- VK widget -->
+    <script type="text/javascript">
+      VK.init({apiId: 5207056, onlyWidgets: true});
+    </script>
+
     <!-- TEMPLATES -->
     <script type="text/template" id="mainWrapper">
         <div class="row centered mt grid">
@@ -62,7 +69,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <% _.each(obj, function(obj_, index_) { %>
+                                <% _.each(obj.fiction, function(obj_, index_) { %>
                                     <tr>
                                         <td>
                                             <%= index_ + 1 %>
@@ -80,6 +87,44 @@
                                     <% }); %>
                             </tbody>
                         </table>
+
+                        <% console.log("obj"); %>
+                        <% console.log(obj); %>
+                        <% console.log("name"); %>
+                        <% console.log(name); %>
+
+                        <% if(obj.series.length > 0) { %>
+                            <div class="table_label">сериалы</div>
+                            <table class="table table_films table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="col1">Позиция</th>
+                                        <th class="col2">Название</th>
+                                        <th class="col3">Год</th>
+                                        <th class="col4">IMDB</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% _.each(obj.series, function(obj_, index_) { %>
+                                        <tr>
+                                            <td>
+                                                <%= index_ + 1 %>
+                                            </td>
+                                            <td>
+                                                <%= obj_.title %>
+                                            </td>
+                                            <td>
+                                                <%= obj_.year %>
+                                            </td>
+                                            <td>
+                                                <%= obj_.imdb %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                        <% } %>
+
                     </div>
                     <% }); %>
             </div>
@@ -282,12 +327,18 @@
         </div>
         <!-- /container -->
     </div>
+
+    <div id="vk_comments"></div>
+    <script type="text/javascript">
+        VK.Widgets.Comments("vk_comments", {limit: 20, width: "400", attach: "photo,audio,link"});
+    </script>
+
     <!-- /social -->
     <div id="f">
         <div class="container">
             <div class="row">
                 <!-- <p style="float:left"></p> -->
-                <p class="author">Alexander Volkov, 2015</p>
+                <p class="author">Alexander Volkov, 2015-2016</p>
             </div>
         </div>
     </div>
