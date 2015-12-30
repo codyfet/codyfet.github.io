@@ -767,14 +767,17 @@ function typicalViewDressing() {
 function getMovieInfo(id){
 
 	var url = "http://www.omdbapi.com/?i=" + id + "&plot=short&r=json";
+    var result = "";
 	$.ajax(url, {
 	    success: function(data) {
-	    	console.log("success");
-	    	console.log(data);
+	    	// console.log("success");
+	    	// console.log(data);
+            result = data;
+            return result;
 	    },
 	    error: function() {
-			console.log("error");
-			console.log(data);
+			// console.log("error");
+			// console.log(data);
 	    }
 	});
 }

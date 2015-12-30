@@ -10,7 +10,21 @@ rateApp.FilmsView = Backbone.View.extend({
 	},
 
 	initialize: function(){
-
+        console.log("INIT filmView");
+        console.log(this);
+        console.log(this.model.attributes.films);
+        var years = this.model.attributes.films;
+        $.each(years,function(index, item){
+            $.each(item.fiction, function(index_, item_){
+                if(item_.imdbId != undefined && item_.imdbId != ""){
+                    $.when(getMovieInfo(item_.imdbId), function(res){
+                        $.extend(item_.imdbData, res);
+                        console.log("item_");
+                        console.log(item_);
+                    })
+                }
+            })
+        });
 	},
 
 	render: function(){
@@ -22,7 +36,7 @@ rateApp.FilmsView = Backbone.View.extend({
 
 		return this;
 	},
-	"openDetails" : function(ev, el){
+	"openDetails" : function(ev){
     	console.log("openDetails");
     	console.log(ev);
     	console.log(el);

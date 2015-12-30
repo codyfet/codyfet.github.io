@@ -66,6 +66,7 @@
                             <thead>
                                 <tr>
                                     <th class="col1">Позиция</th>
+                                    <th class="col1">Постер</th>
                                     <th class="col2">Название</th>
                                     <th class="col3">Год</th>
                                     <th class="col4">IMDB</th>
@@ -76,6 +77,9 @@
                                     <tr id="<%=obj_.imdbId %>" class="item">
                                         <td>
                                             <%= index_ + 1 %>
+                                        </td>
+                                        <td>
+                                            <div class="poster_holder"></div>
                                         </td>
                                         <td>
                                             <%= obj_.title %>
