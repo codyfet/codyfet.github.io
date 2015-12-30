@@ -6,7 +6,7 @@ rateApp.FilmsView = Backbone.View.extend({
 	tagName: 'div',
 	template: $("#filmsTemplate").html(),
 	events: {
-
+		"click .item" : "openDetails"
 	},
 
 	initialize: function(){
@@ -22,5 +22,10 @@ rateApp.FilmsView = Backbone.View.extend({
 
 		return this;
 	},
+	"openDetails" : function(ev, el){
+    	console.log("openDetails");
+    	console.log(ev);
+    	console.log(el);
+    }
 
 });

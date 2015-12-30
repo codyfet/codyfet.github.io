@@ -6,47 +6,58 @@ var multi = {
             'fiction': [{
                 'title': "Поля смерти",
                 'year': 1984,
-                'imdb': 7.90
+                'imdb': 7.90,
+                'imdbId':"tt0087553"
             }, {
                 'title': "Елена",
                 'year': 2011,
-                'imdb': 7.30
+                'imdb': 7.30,
+                'imdbId': "tt1925421"
             }, {
                 'title': "Дорога перемен",
                 'year': 2008,
-                'imdb': 7.30
+                'imdb': 7.30,
+                'imdbId': "tt0959337"
             }, {
                 'title': "Прометей",
                 'year': 2012,
-                'imdb': 7.00
+                'imdb': 7.00,
+                'imdbId': "tt1446714"
             }, {
                 'title': "Адвокат дьявола",
                 'year': 1997,
-                'imdb': 7.50
+                'imdb': 7.50,
+                'imdbId': "tt0118971"
             }, {
                 'title': "Меланхолия",
                 'year': 2011,
-                'imdb': 7.10
+                'imdb': 7.10,
+                'imdbId': "tt1527186"
             }, {
                 'title': "Хранитель времени",
                 'year': 2011,
-                'imdb': 7.60
+                'imdb': 7.60,
+                'imdbId': "tt0970179"
             }, {
                 'title': "Дж. Эдгар",
                 'year': 2011,
-                'imdb': 6.60
+                'imdb': 6.60,
+                'imdbId': "tt1616195"
             }, {
                 'title': "Артист",
                 'year': 2011,
-                'imdb': 8.00
+                'imdb': 8.00,
+                'imdbId': "tt1655442"
             }, {
                 'title': "Нити",
                 'year': 1984,
-                'imdb': 8.10
+                'imdb': 8.10,
+                'imdbId': "tt0090163"
             }, {
                 'title': "Треугольник",
                 'year': 2009,
-                'imdb': 6.90
+                'imdb': 6.90,
+                'imdbId': "tt1187064"
             }],
             'series': []
         },
@@ -752,3 +763,21 @@ function typicalViewDressing() {
     $("#f").removeClass("main_footer");
 
 }
+
+function getMovieInfo(id){
+
+	var url = "http://www.omdbapi.com/?i=" + id + "&plot=short&r=json";
+	$.ajax(url, {
+	    success: function(data) {
+	    	console.log("success");
+	    	console.log(data);
+	    },
+	    error: function() {
+			console.log("error");
+			console.log(data);
+	    }
+	});
+}
+
+
+
