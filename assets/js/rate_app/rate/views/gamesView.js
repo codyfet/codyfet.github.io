@@ -29,7 +29,7 @@ rateApp.GamesView = Backbone.View.extend({
                 if (item_.giantBombId != undefined && item_.giantBombId != "") {
                     $.when(getGameInfo(item_.giantBombId)).then(function(res) {
                         item_.giantBombData = new Object();
-                        $.extend(item_.giantBombData, res.results);
+                        $.extend(item_.giantBombData, res);
                         //that.renderPoster(item_);
                     });
                 }
@@ -57,23 +57,6 @@ rateApp.GamesView = Backbone.View.extend({
         this.renderPosters();
     },
 
-    renderPoster: function(item) {
-
-        var giantBombIdId = item.giantBombId;
-        var posterUrl = item.giantBombData.image.small_url;
-        var $row = $("#" + giantBombIdId);
-        var $posterHolder = $row.find(".game_poster_holder");
-
-        if (posterUrl != "N/A") {
-            $posterHolder.css("background", "url(" + posterUrl + ")");
-            $posterHolder.css("background-size", "100%");
-            $posterHolder.css("background-repeat", "no-repeat");
-        }
-
-        console.log("Render poster game");
-
-    },
-
     renderPosters: function(item) {
 
         console.log("Render poster game");
@@ -81,13 +64,12 @@ rateApp.GamesView = Backbone.View.extend({
         $.each(gamesyears, function(index, model) {
             $.each(model, function(index_, item_) {
                 var giantBombId = item_.giantBombId;
-                var posterUrl = "N/A";
                 if (giantBombId != undefined) {
-                    posterUrl = item_.giantBombData.image.thumb_url;
+                	//console.log(giantBombId);
+                    var posterUrl = item_.giantBombData.image.small_url;
                     var $row = $("#" + giantBombId);
                     var $posterHolder = $row.find(".game_poster_holder");
-                }
-                if (posterUrl != "N/A") {
+
                     $posterHolder.css("background", "url(" + posterUrl + ")");
                     $posterHolder.css("background-size", "100%");
                     $posterHolder.css("background-repeat", "no-repeat");

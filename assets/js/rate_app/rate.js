@@ -611,113 +611,140 @@ var multi = {
         'year2013': [{
             'title': "Walking Dead. Season 1",
             'year': 2012,
-            'metacritic': 82
+            'metacritic': 82,
+            'giantBombId':"3030-34205"
         }, {
             'title': "Mass Effect 3",
             'year': 2012,
-            'metacritic': 89
+            'metacritic': 89,
+            'giantBombId':"3030-29935"
         }, {
             'title': "Sleeping Dogs",
             'year': 2012,
-            'metacritic': 81
+            'metacritic': 81,
+            'giantBombId':"3030-29441"
         }, {
             'title': "Sword of the Stars: the Pit",
             'year': 2013,
-            'metacritic': 68
+            'metacritic': 68,
+            'giantBombId':"3030-41913"
         }, {
             'title': "Hotline Miami",
             'year': 2012,
-            'metacritic': 85
+            'metacritic': 85,
+            'giantBombId':"3030-39452"
         }, {
             'title': "The Binding of Isaac",
             'year': 2011,
-            'metacritic': 84
+            'metacritic': 84,
+            'giantBombId':"3030-35899"
         }, {
             'title': "Mafia 2",
             'year': 2010,
-            'metacritic': 74
+            'metacritic': 74,
+            'giantBombId':"3030-20538"
         }, {
             'title': "Alan Wake",
             'year': 2012,
-            'metacritic': 83
+            'metacritic': 83,
+            'giantBombId':"3030-20982"
         }, {
             'title': "Just Cause 2. Multiplayer mod",
             'year': 2010,
-            'metacritic': 84
+            'metacritic': 84,
+            'giantBombId':"3030-20742"
         }, {
             'title': "Chaos Engine",
             'year': 1993,
-            'metacritic': 40
+            'metacritic': 40,
+            'giantBombId':"3030-948"
         }],
         'year2014': [{
             'title': "Dragon age: Origins",
             'year': 2009,
-            'metacritic': 91
+            'metacritic': 91,
+            'giantBombId':"3030-20738"
         }, {
             'title': "XCOM: Enemy unknown",
             'year': 2013,
-            'metacritic': 91
+            'metacritic': 91,
+            'giantBombId':"3030-37152"
         }, {
             'title': "Walking dead: Season 2",
             'year': 2014,
-            'metacritic': 87
+            'metacritic': 87,
+            'giantBombId':"3030-39042"
         }, {
             'title': "The wolf among us",
             'year': 2014,
-            'metacritic': 84
+            'metacritic': 84,
+            'giantBombId':"3030-34213"
         }, {
             'title': "Don't starve",
             'year': 2013,
-            'metacritic': 79
+            'metacritic': 79,
+            'giantBombId':"3030-39664"
         }, {
             'title': "F1 2013",
             'year': 2013,
-            'metacritic': 77
+            'metacritic': 77,
+            'giantBombId':"3030-43251"
         }, {
             'title': "Sniper elite V2",
             'year': 2012,
-            'metacritic': 66
+            'metacritic': 66,
+            'giantBombId':"3030-34715"
         }, {
             'title': "FEZ",
             'year': 2013,
-            'metacritic': 91
+            'metacritic': 91,
+            'giantBombId':"3030-24768"
         }, {
             'title': "Bioshock",
             'year': 2007,
-            'metacritic': 96
+            'metacritic': 96,
+            'giantBombId':"3030-17280"
         }, {
             'title': "Worms Armageddon",
             'year': 1999,
-            'metacritic': "-"
+            'metacritic': "-",
+            'giantBombId':"3030-17255"
         }],
         'year2015': [{
             'title': "This war of mine",
             'year': 2014,
-            'metacritic': 83
+            'metacritic': 83,
+            'giantBombId':"3030-45657"
         }, {
             'title': "Don't starve together",
             'year': 2014,
-            'metacritic': 79
+            'metacritic': 79,
+            'giantBombId':"3030-39664"
         }, {
             'title': "Binding of Isaac: Rebirth",
             'year': 2014,
-            'metacritic': 86
+            'metacritic': 86,
+            'giantBombId':"3030-40865"
         }, {
             'title': "XCOM: Enemy within",
             'year': 2014,
-            'metacritic': 92
+            'metacritic': 92,
+            'giantBombId':"3030-43648"
         }, {
             'title': "Chess.com",
             'year': 2005,
-            'metacritic': "-"
+            'metacritic': "-",
+            'giantBombId':"3030-37907"
         }, {
             'title': "Rogue Legacy",
             'year': 2013,
-            'metacritic': 85
+            'metacritic': 85,
+            'giantBombId':"3030-42828"
         }, {
             'title': "Hearthstone",
             'year': 2014,
-            'metacritic': 88
+            'metacritic': 88,
+            'giantBombId':"3030-42033"
         }]
     }
 };
@@ -846,8 +873,7 @@ function getGameInfo(gameId) {
             success: function(data) {
                 console.log("success game data");
                 console.log(data);
-                localStorage.setItem(gameId, JSON.stringify(data));
-                //localStorage.removeItem(gameId);
+                localStorage.setItem(gameId, JSON.stringify(data.results));
                 result = data;
                 return result;
             },
@@ -860,6 +886,7 @@ function getGameInfo(gameId) {
     }
     else {
         result = JSON.parse(localStorageGame);
+        //localStorage.removeItem(gameId);
         return result;
     }
 
