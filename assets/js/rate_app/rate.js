@@ -7,7 +7,7 @@ var multi = {
                 'title': "Поля смерти",
                 'year': 1984,
                 'imdb': 7.90,
-                'imdbId':"tt0087553"
+                'imdbId': "tt0087553"
             }, {
                 'title': "Елена",
                 'year': 2011,
@@ -65,43 +65,53 @@ var multi = {
             'fiction': [{
                 'title': "Большой Лебовски",
                 'year': 1998,
-                'imdb': 8.20
+                'imdb': 8.20,
+                'imdbId': "tt0118715"
             }, {
                 'title': "Сияние",
                 'year': 1980,
-                'imdb': 8.50
+                'imdb': 8.50,
+                'imdbId': "tt0081505"
             }, {
                 'title': "Шерлок (сериал)",
                 'year': '2010-2012',
-                'imdb': 9.30
+                'imdb': 9.30,
+                'imdbId': "tt1475582"
             }, {
                 'title': "Джанго освобожденный",
                 'year': 2012,
-                'imdb': 8.50
+                'imdb': 8.50,
+                'imdbId': "tt0060315"
             }, {
                 'title': "Бэтмен (трилогия)",
                 'year': '2005-2012',
-                'imdb': '7.98 8.49 8.33'
+                'imdb': '7.98 8.49 8.33',
+                'imdbId': "tt0468569"
             }, {
                 'title': "Церемония",
                 'year': 1995,
-                'imdb': 7.60
+                'imdb': 7.60,
+                'imdbId': "tt0112769"
             }, {
                 'title': "Вспомнить все",
                 'year': 2012,
-                'imdb': 6.30
+                'imdb': 6.30,
+                'imdbId': "tt1386703"
             }, {
                 'title': "Беспредел",
                 'year': 2010,
-                'imdb': 6.80
+                'imdb': 6.80,
+                'imdbId': "tt1462667"
             }, {
                 'title': "Пипец",
                 'year': 2010,
-                'imdb': 7.80
+                'imdb': 7.80,
+                'imdbId': "tt1250777"
             }, {
                 'title': "Мечта кассандры",
                 'year': 2007,
-                'imdb': 6.70
+                'imdb': 6.70,
+                'imdbId': "tt0795493"
             }],
             'series': []
         },
@@ -109,47 +119,58 @@ var multi = {
             'fiction': [{
                 'title': "Однажды в Америке",
                 'year': 1983,
-                'imdb': 8.40
+                'imdb': 8.40,
+                'imdbId': "tt0087843"
             }, {
                 'title': "Отель 'Руанда'",
                 'year': 2004,
-                'imdb': 8.20
+                'imdb': 8.20,
+                'imdbId': "tt0395169"
             }, {
                 'title': "Волк с Уолл-стрит",
                 'year': 2013,
-                'imdb': 8.30
+                'imdb': 8.30,
+                'imdbId': "tt0993846"
             }, {
                 'title': "Рокки",
                 'year': 1976,
-                'imdb': 8.10
+                'imdb': 8.10,
+                'imdbId': "tt0075148"
             }, {
                 'title': "Интерстеллар",
                 'year': 2014,
-                'imdb': 8.90
+                'imdb': 8.90,
+                'imdbId': "tt0816692"
             }, {
                 'title': "Обливион",
                 'year': 2013,
-                'imdb': 7.00
+                'imdb': 7.00,
+                'imdbId': "tt1483013"
             }, {
                 'title': "Пленницы",
                 'year': 2013,
-                'imdb': 8.10
+                'imdb': 8.10,
+                'imdbId': "tt1392214"
             }, {
                 'title': "Грань будущего",
                 'year': 2014,
-                'imdb': 8.00
+                'imdb': 8.00,
+                'imdbId': "tt1631867"
             }, {
                 'title': "Таксист",
                 'year': 1976,
-                'imdb': 8.40
+                'imdb': 8.40,
+                'imdbId': "tt0075314"
             }, {
                 'title': "Исчезнувшая",
                 'year': 2014,
-                'imdb': 8.30
+                'imdb': 8.30,
+                'imdbId': "tt2267998"
             }, {
                 'title': "Драйв",
                 'year': 2011,
-                'imdb': 7.80
+                'imdb': 7.80,
+                'imdbId': "tt0780504"
             }],
             'series': []
         },
@@ -157,64 +178,79 @@ var multi = {
             'fiction': [{
                 'title': "Бегущий по лезвию бритвы",
                 'year': 1982,
-                'imdb': 8.20
+                'imdb': 8.20,
+                'imdbId': "tt0083658"
             }, {
                 'title': "Утомленные солнцем",
                 'year': 1994,
-                'imdb': 8.00
+                'imdb': 8.00,
+                'imdbId': "tt0111579"
             }, {
                 'title': "Безумный Макс: Дорога ярости",
                 'year': 2015,
-                'imdb': 8.20
+                'imdb': 8.20,
+                'imdbId': "tt1392190"
             }, {
                 'title': "Набережная Орфевр, 36",
                 'year': 2004,
-                'imdb': 7.20
+                'imdb': 7.20,
+                'imdbId': "tt0390808"
             }, {
                 'title': "Рембо: Первая Кровь (часть 1, часть 2)",
                 'year': "1982, 1985",
-                'imdb': 8.90
+                'imdb': 8.90,
+                'imdbId': "tt0083944"
             }, {
                 'title': "Звездные войны: Пробуждение силы (эпизод 7)",
                 'year': 2015,
-                'imdb': 8.60
+                'imdb': 8.60,
+                'imdbId': "tt2488496"
             }, {
                 'title': "Имя розы",
                 'year': 1986,
-                'imdb': 7.80
+                'imdb': 7.80,
+                'imdbId': "tt0091605"
             }, {
                 'title': "Иди и смотри",
                 'year': 1985,
-                'imdb': 8.30
+                'imdb': 8.30,
+                'imdbId': "tt0091251"
             }, {
                 'title': "Любовь и смерть",
                 'year': 1975,
-                'imdb': 7.80
+                'imdb': 7.80,
+                'imdbId': "tt0073312"
             }, {
                 'title': "Робот по имени Чаппи",
                 'year': 2015,
-                'imdb': 6.90
+                'imdb': 6.90,
+                'imdbId': "tt1823672"
             }, {
                 'title': "Воспоминания об убийстве",
                 'year': 2003,
-                'imdb': 8.10
+                'imdb': 8.10,
+                'imdbId': "tt0353969"
             }],
             'series': [{
                 'title': "Фарго, сезон 1",
                 'year': 2014,
-                'imdb': 9.00
+                'imdb': 9.00,
+                'imdbId': "tt2802850"
             }, {
                 'title': "Настоящий детектив, сезон 1",
                 'year': 2014,
-                'imdb': 9.20
+                'imdb': 9.20,
+                'imdbId': "tt2356777"
             }, {
                 'title': "Настоящий детектив, сезон 2",
                 'year': 2015,
-                'imdb': 9.20
+                'imdb': 9.20,
+                'imdbId': "tt2356777"
             }, {
                 'title': "Мост, сезон 1",
                 'year': 2011,
-                'imdb': 8.60
+                'imdb': 8.60,
+                'imdbId': "tt1733785"
             }]
         }
     },
@@ -764,23 +800,21 @@ function typicalViewDressing() {
 
 }
 
-function getMovieInfo(id){
+function getMovieInfo(id) {
 
-	var url = "http://www.omdbapi.com/?i=" + id + "&plot=short&r=json";
+    var urlString = "http://www.omdbapi.com/?i=" + id + "&plot=short&r=json";
     var result = "";
-	$.ajax(url, {
-	    success: function(data) {
-	    	// console.log("success");
-	    	// console.log(data);
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            // console.log("success");
+            // console.log(data);
             result = data;
             return result;
-	    },
-	    error: function() {
-			// console.log("error");
-			// console.log(data);
-	    }
-	});
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
 }
-
-
-
