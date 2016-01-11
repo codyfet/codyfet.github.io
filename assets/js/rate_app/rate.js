@@ -580,27 +580,33 @@ var multi = {
         'year2012': [{
             'title': "MTG: Duels of planewalkers 2013",
             'year': 2012,
-            'metacritic': 77
+            'metacritic': 77,
+            'giantBombId':"3030-37907"
         }, {
             'title': "Mass Effect 2",
             'year': 2010,
-            'metacritic': 94
+            'metacritic': 94,
+            'giantBombId':"3030-21590"
         }, {
             'title': "Grand Theft Auto 4",
             'year': 2008,
-            'metacritic': 90
+            'metacritic': 90,
+            'giantBombId':"3030-20457"
         }, {
             'title': "Risen",
             'year': 2009,
-            'metacritic': 77
+            'metacritic': 77,
+            'giantBombId':"3030-23081"
         }, {
             'title': "Hitman",
             'year': 2000,
-            'metacritic': 73
+            'metacritic': 73,
+            'giantBombId':"3030-6709"
         }, {
             'title': "Braid",
             'year': 2010,
-            'metacritic': 90
+            'metacritic': 90,
+            'giantBombId':"3030-20716"
         }],
         'year2013': [{
             'title': "Walking Dead. Season 1",
@@ -817,4 +823,44 @@ function getMovieInfo(id) {
             // console.log(data);
         }
     });
+}
+
+function getGameInfo(gameId) {
+
+    var result = "";
+
+    var localStorageGame = localStorage.getItem(gameId);
+    console.log("localStorageGame");
+    console.log(localStorageGame);
+
+    if(localStorageGame == undefined){
+
+        var api_key = "7e50e7a3d98c9a9e449fada9dc8b5da92e67d9d4";
+        var urlString = "http://www.giantbomb.com/api/game/" + gameId + "/?api_key=" + api_key + "&format=jsonp&field_list=id,name,image";
+        return $.ajax({
+            url: urlString,
+            type: "GET",
+            dataType: "jsonp",
+            crossDomain: true,
+            jsonp: "json_callback",
+            success: function(data) {
+                console.log("success game data");
+                console.log(data);
+                localStorage.setItem(gameId, JSON.stringify(data));
+                //localStorage.removeItem(gameId);
+                result = data;
+                return result;
+            },
+            error: function() {
+                // console.log("error");
+                // console.log(data);
+            }
+        });
+
+    }
+    else {
+        result = JSON.parse(localStorageGame);
+        return result;
+    }
+
 }

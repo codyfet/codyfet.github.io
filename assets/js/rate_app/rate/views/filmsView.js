@@ -11,9 +11,6 @@ rateApp.FilmsView = Backbone.View.extend({
 
 	initialize: function(){
         var that = this;
-        console.log("INIT filmView");
-        console.log(this);
-        console.log(this.model.attributes.films);
         var years = this.model.attributes.films;
         $.each(years,function(index, item){
             // load fiction films

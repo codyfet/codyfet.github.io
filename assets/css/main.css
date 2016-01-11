@@ -484,6 +484,10 @@ div.small_label {
     min-height: 120px;
 }
 
+.game_poster_holder {
+    min-height: 145px;
+}
+
 
 /* Arrows */
 
