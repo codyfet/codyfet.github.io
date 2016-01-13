@@ -64,7 +64,7 @@ rateApp.GamesView = Backbone.View.extend({
         $.each(gamesyears, function(index, model) {
             $.each(model, function(index_, item_) {
                 var giantBombId = item_.giantBombId;
-                if (giantBombId != undefined) {
+                if (giantBombId != undefined && item_.giantBombData != undefined) {
                 	//console.log(giantBombId);
                     var posterUrl = item_.giantBombData.image.small_url;
                     var $row = $("#" + giantBombId);

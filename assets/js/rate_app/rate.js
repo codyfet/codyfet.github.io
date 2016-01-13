@@ -833,23 +833,37 @@ function typicalViewDressing() {
 
 }
 
-function getMovieInfo(id) {
+function getMovieInfo(IMDBid) {
 
-    var urlString = "http://www.omdbapi.com/?i=" + id + "&plot=short&r=json";
-    var result = "";
-    return $.ajax({
-        url: urlString,
-        success: function(data) {
-            // console.log("success");
-            // console.log(data);
-            result = data;
-            return result;
-        },
-        error: function() {
-            // console.log("error");
-            // console.log(data);
-        }
-    });
+    var localStorageFilm = localStorage.getItem(IMDBid);
+    console.log("localStorageFilm");
+    console.log(localStorageFilm);
+
+    if(localStorageFilm == undefined){
+
+        var urlString = "http://www.omdbapi.com/?i=" + IMDBid + "&plot=short&r=json";
+        var result = "";
+        return $.ajax({
+            url: urlString,
+            success: function(data) {
+                // console.log("success");
+                // console.log(data);
+                result = data;
+                localStorage.setItem(IMDBid, JSON.stringify(result));
+                return result;
+            },
+            error: function() {
+                // console.log("error");
+                // console.log(data);
+            }
+        });
+
+    }
+    else {
+        result = JSON.parse(localStorageFilm);
+        //localStorage.removeItem(IMDBid);
+        return result;
+    }
 }
 
 function getGameInfo(gameId) {
