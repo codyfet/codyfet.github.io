@@ -8,6 +8,7 @@ rateApp.FilmsView = Backbone.View.extend({
 	events: {
 		"click .item" : "openDetails"
 	},
+    request_token: "",
 
 	initialize: function(){
 
@@ -25,29 +26,50 @@ rateApp.FilmsView = Backbone.View.extend({
         var that = this;
         var years = this.model.attributes.films;
 
+        // my list
+        console.log("My List " + "5696687859663d1e0b000054");
+
+        // #1 Get REQUEST_TOKEN (TMDB)
+        $.when(getRequestTokenTmdb()).then(function(resp_token){
+            that.request_token = resp_token.request_token;
+            console.log(that.request_token);
+            // #2 Ask permission for user on TMDB (in this case user codyfet)
+            $.when(askPermissionTmdb(that.request_token)).then(function(resp_permission){
+                console.log("resp permission");
+                console.log(resp_permission);
+                // #3 If permission allows get SESSION_ID (session_id needs for post request to the TMDB service)
+                if(resp_permission.success){
+                    $.when(getSessionId(that.request_token)).then(function(resp_session){
+                        console.log("resp_session");
+                        console.log(resp_session);
+                    });
+                }
+            });
+        });
+
         $.each(years,function(index, item){
 
             // load fiction films
-            $.each(item.fiction, function(index_, item_){
-                if(item_.imdbId != undefined && item_.imdbId != ""){
-                    $.when(getMovieInfo(item_.imdbId)).then(function(res){
-                        item_.imdbData = new Object();
-                        $.extend(item_.imdbData, res);
-                        that.renderPoster(item_);
-                    });
-                }
-            });
+            // $.each(item.fiction, function(index_, item_){
+            //     if(item_.imdbId != undefined && item_.imdbId != ""){
+            //         $.when(getMovieInfoTmdb(item_.imdbId)).then(function(res){
+            //             item_.imdbData = new Object();
+            //             $.extend(item_.imdbData, res);
+            //             //that.renderPoster(item_);
+            //         });
+            //     }
+            // });
             // load series films
-            $.each(item.series, function(index_, item_){
+            // $.each(item.series, function(index_, item_){
 
-                if(item_.imdbId != undefined && item_.imdbId != ""){
-                    $.when(getMovieInfo(item_.imdbId)).then(function(res){
-                        item_.imdbData = new Object();
-                        $.extend(item_.imdbData, res);
-                        that.renderPoster(item_);
-                    });
-                }
-            });
+            //     if(item_.imdbId != undefined && item_.imdbId != ""){
+            //         $.when(getMovieInfo(item_.imdbId)).then(function(res){
+            //             item_.imdbData = new Object();
+            //             $.extend(item_.imdbData, res);
+            //             //that.renderPoster(item_);
+            //         });
+            //     }
+            // });
 
         });
 	},
@@ -69,7 +91,7 @@ rateApp.FilmsView = Backbone.View.extend({
     afterRender: function() {
         console.log('afterRender');
         // control loading
-        this.renderPosters();
+        //this.renderPosters();
     },
 
 	"openDetails" : function(ev){

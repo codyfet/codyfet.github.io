@@ -7,57 +7,68 @@ var multi = {
                 'title': "Поля смерти",
                 'year': 1984,
                 'imdb': 7.90,
-                'imdbId': "tt0087553"
+                'imdbId': "tt0087553",
+                'tmdbId': "625"
             }, {
                 'title': "Елена",
                 'year': 2011,
                 'imdb': 7.30,
-                'imdbId': "tt1925421"
+                'imdbId': "tt1925421",
+                'tmdbId': "78182"
             }, {
                 'title': "Дорога перемен",
                 'year': 2008,
                 'imdb': 7.30,
-                'imdbId': "tt0959337"
+                'imdbId': "tt0959337",
+                'tmdbId': "4148"
             }, {
                 'title': "Прометей",
                 'year': 2012,
                 'imdb': 7.00,
-                'imdbId': "tt1446714"
+                'imdbId': "tt1446714",
+                'tmdbId': "70981"
             }, {
                 'title': "Адвокат дьявола",
                 'year': 1997,
                 'imdb': 7.50,
-                'imdbId': "tt0118971"
+                'imdbId': "tt0118971",
+                'tmdbId': "1813"
             }, {
                 'title': "Меланхолия",
                 'year': 2011,
                 'imdb': 7.10,
-                'imdbId': "tt1527186"
+                'imdbId': "tt1527186",
+                'tmdbId': "62215"
             }, {
                 'title': "Хранитель времени",
                 'year': 2011,
                 'imdb': 7.60,
-                'imdbId': "tt0970179"
+                'imdbId': "tt0970179",
+                'tmdbId': "44826"
             }, {
                 'title': "Дж. Эдгар",
                 'year': 2011,
                 'imdb': 6.60,
-                'imdbId': "tt1616195"
+                'imdbId': "tt1616195",
+                'tmdbId': "88794"
             }, {
                 'title': "Артист",
                 'year': 2011,
                 'imdb': 8.00,
-                'imdbId': "tt1655442"
+                'imdbId': "tt1655442",
+                'tmdbId': "74643"
             }, {
                 'title': "Нити",
                 'year': 1984,
                 'imdb': 8.10,
-                'imdbId': "tt0090163"
+                'imdbId': "tt0090163",
+                'tmdbId': "17835"
             }, {
                 'title': "Треугольник",
                 'year': 2009,
                 'imdb': 6.90,
-                'imdbId': "tt1187064"
+                'imdbId': "tt1187064",
+                'tmdbId': "26466"
             }],
             'series': []
         },
@@ -66,52 +77,62 @@ var multi = {
                 'title': "Большой Лебовски",
                 'year': 1998,
                 'imdb': 8.20,
-                'imdbId': "tt0118715"
+                'imdbId': "tt0118715",
+                'tmdbId': "26466"
             }, {
                 'title': "Сияние",
                 'year': 1980,
                 'imdb': 8.50,
-                'imdbId': "tt0081505"
+                'imdbId': "tt0081505",
+                'tmdbId': "26466"
             }, {
                 'title': "Шерлок (сериал)",
                 'year': '2010-2012',
                 'imdb': 9.30,
-                'imdbId': "tt1475582"
+                'imdbId': "tt1475582",
+                'tmdbId': "26466"
             }, {
                 'title': "Джанго освобожденный",
                 'year': 2012,
                 'imdb': 8.50,
-                'imdbId': "tt0060315"
+                'imdbId': "tt0060315",
+                'tmdbId': "10772"
             }, {
                 'title': "Бэтмен (трилогия)",
                 'year': '2005-2012',
                 'imdb': '7.98 8.49 8.33',
-                'imdbId': "tt0468569"
+                'imdbId': "tt0468569",
+                'tmdbId': "155"
             }, {
                 'title': "Церемония",
                 'year': 1995,
                 'imdb': 7.60,
-                'imdbId': "tt0112769"
+                'imdbId': "tt0112769",
+                'tmdbId': "1802"
             }, {
                 'title': "Вспомнить все",
                 'year': 2012,
                 'imdb': 6.30,
-                'imdbId': "tt1386703"
+                'imdbId': "tt1386703",
+                'tmdbId': "64635"
             }, {
                 'title': "Беспредел",
                 'year': 2010,
                 'imdb': 6.80,
-                'imdbId': "tt1462667"
+                'imdbId': "tt1462667",
+                'tmdbId': "45284"
             }, {
                 'title': "Пипец",
                 'year': 2010,
                 'imdb': 7.80,
-                'imdbId': "tt1250777"
+                'imdbId': "tt1250777",
+                'tmdbId': "23483"
             }, {
                 'title': "Мечта кассандры",
                 'year': 2007,
                 'imdb': 6.70,
-                'imdbId': "tt0795493"
+                'imdbId': "tt0795493",
+                'tmdbId': "4787"
             }],
             'series': []
         },
@@ -120,57 +141,68 @@ var multi = {
                 'title': "Однажды в Америке",
                 'year': 1983,
                 'imdb': 8.40,
-                'imdbId': "tt0087843"
+                'imdbId': "tt0087843",
+                'tmdbId': "311"
             }, {
                 'title': "Отель 'Руанда'",
                 'year': 2004,
                 'imdb': 8.20,
-                'imdbId': "tt0395169"
+                'imdbId': "tt0395169",
+                'tmdbId': "205"
             }, {
                 'title': "Волк с Уолл-стрит",
                 'year': 2013,
                 'imdb': 8.30,
-                'imdbId': "tt0993846"
+                'imdbId': "tt0993846",
+                'tmdbId': "26466"
             }, {
                 'title': "Рокки",
                 'year': 1976,
                 'imdb': 8.10,
-                'imdbId': "tt0075148"
+                'imdbId': "tt0075148",
+                'tmdbId': "1366"
             }, {
                 'title': "Интерстеллар",
                 'year': 2014,
                 'imdb': 8.90,
-                'imdbId': "tt0816692"
+                'imdbId': "tt0816692",
+                'tmdbId': "157336"
             }, {
                 'title': "Обливион",
                 'year': 2013,
                 'imdb': 7.00,
-                'imdbId': "tt1483013"
+                'imdbId': "tt1483013",
+                'tmdbId': "75612"
             }, {
                 'title': "Пленницы",
                 'year': 2013,
                 'imdb': 8.10,
-                'imdbId': "tt1392214"
+                'imdbId': "tt1392214",
+                'tmdbId': "146233"
             }, {
                 'title': "Грань будущего",
                 'year': 2014,
                 'imdb': 8.00,
-                'imdbId': "tt1631867"
+                'imdbId': "tt1631867",
+                'tmdbId': "137113"
             }, {
                 'title': "Таксист",
                 'year': 1976,
                 'imdb': 8.40,
-                'imdbId': "tt0075314"
+                'imdbId': "tt0075314",
+                'tmdbId': "103"
             }, {
                 'title': "Исчезнувшая",
                 'year': 2014,
                 'imdb': 8.30,
-                'imdbId': "tt2267998"
+                'imdbId': "tt2267998",
+                'tmdbId': "210577"
             }, {
                 'title': "Драйв",
                 'year': 2011,
                 'imdb': 7.80,
-                'imdbId': "tt0780504"
+                'imdbId': "tt0780504",
+                'tmdbId': "64690"
             }],
             'series': []
         },
@@ -179,57 +211,68 @@ var multi = {
                 'title': "Бегущий по лезвию бритвы",
                 'year': 1982,
                 'imdb': 8.20,
-                'imdbId': "tt0083658"
+                'imdbId': "tt0083658",
+                'tmdbId': "78"
             }, {
                 'title': "Утомленные солнцем",
                 'year': 1994,
                 'imdb': 8.00,
-                'imdbId': "tt0111579"
+                'imdbId': "tt0111579",
+                'tmdbId': "50797"
             }, {
                 'title': "Безумный Макс: Дорога ярости",
                 'year': 2015,
                 'imdb': 8.20,
-                'imdbId': "tt1392190"
+                'imdbId': "tt1392190",
+                'tmdbId': "76341"
             }, {
                 'title': "Набережная Орфевр, 36",
                 'year': 2004,
                 'imdb': 7.20,
-                'imdbId': "tt0390808"
+                'imdbId': "tt0390808",
+                'tmdbId': "7291"
             }, {
                 'title': "Рембо: Первая Кровь (часть 1, часть 2)",
                 'year': "1982, 1985",
                 'imdb': 8.90,
-                'imdbId': "tt0083944"
+                'imdbId': "tt0083944",
+                'tmdbId': "1368"
             }, {
                 'title': "Звездные войны: Пробуждение силы (эпизод 7)",
                 'year': 2015,
                 'imdb': 8.60,
-                'imdbId': "tt2488496"
+                'imdbId': "tt2488496",
+                'tmdbId': "26466"
             }, {
                 'title': "Имя розы",
                 'year': 1986,
                 'imdb': 7.80,
-                'imdbId': "tt0091605"
+                'imdbId': "tt0091605",
+                'tmdbId': "192"
             }, {
                 'title': "Иди и смотри",
                 'year': 1985,
                 'imdb': 8.30,
-                'imdbId': "tt0091251"
+                'imdbId': "tt0091251",
+                'tmdbId': "25237"
             }, {
                 'title': "Любовь и смерть",
                 'year': 1975,
                 'imdb': 7.80,
-                'imdbId': "tt0073312"
+                'imdbId': "tt0073312",
+                'tmdbId': "26466"
             }, {
                 'title': "Робот по имени Чаппи",
                 'year': 2015,
                 'imdb': 6.90,
-                'imdbId': "tt1823672"
+                'imdbId': "tt1823672",
+                'tmdbId': "26466"
             }, {
                 'title': "Воспоминания об убийстве",
                 'year': 2003,
                 'imdb': 8.10,
-                'imdbId': "tt0353969"
+                'imdbId': "tt0353969",
+                'tmdbId': "26466"
             }],
             'series': [{
                 'title': "Фарго, сезон 1",
@@ -832,7 +875,7 @@ function typicalViewDressing() {
     $("#f").removeClass("main_footer");
 
 }
-
+// omdb
 function getMovieInfo(IMDBid) {
 
     var localStorageFilm = localStorage.getItem(IMDBid);
@@ -864,6 +907,191 @@ function getMovieInfo(IMDBid) {
         //localStorage.removeItem(IMDBid);
         return result;
     }
+}
+
+// tmdb
+function getMovieInfoTmdb(IMDBid) {
+
+    // var localStorageFilm = localStorage.getItem(IMDBid);
+    // console.log("localStorageFilm");
+    // console.log(localStorageFilm);
+
+    //if(localStorageFilm == undefined){
+
+        // TMDB API_KEY
+        var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+        var urlString = "https://api.themoviedb.org/3/find/" + IMDBid + "?external_source=imdb_id&api_key=" + API_KEY;
+        var result = "";
+        return $.ajax({
+            url: urlString,
+            success: function(data) {
+                console.log("success");
+                console.log(data);
+                result = data.movie_results[0];
+                //localStorage.setItem(IMDBid, JSON.stringify(result));
+                return result;
+            },
+            error: function() {
+                // console.log("error");
+                // console.log(data);
+            }
+        });
+
+    //}
+    // else {
+    //     result = JSON.parse(localStorageFilm);
+    //     //localStorage.removeItem(IMDBid);
+    //     return result;
+    // }
+}
+
+//tmdb
+function getRequestTokenTmdb(){
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "https://api.themoviedb.org/3/authentication/token/new?api_key=" + API_KEY;
+    var request_token = "";
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            // console.log("success token request");
+            // console.log(data);
+            // request_token = data.request_token;
+            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+}
+
+//tmdb
+function askPermissionTmdb(request_token){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=" + API_KEY + "&request_token=" + request_token + "&username=codyfet&password=.gb.gb30"
+    //var request_token = "";
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            // console.log("success token request");
+            // console.log(data);
+            // request_token = data.request_token;
+            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+}
+
+//tmdb
+function getSessionId(request_token){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "https://api.themoviedb.org/3/authentication/session/new?api_key=" + API_KEY + "&request_token=" + request_token;
+    var session_id = "";
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            // console.log("success session request");
+            // console.log(data);
+            // request_token = data.request_token;
+            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+function createListTmdb(session_id){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "https://api.themoviedb.org/3/list?api_key=" + API_KEY + "&session_id=" + session_id;
+    var session_id = "";
+    return $.ajax({
+        url: urlString,
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: "{'name':'Name1','description':'Description1'}",//JSON.stringify({"name":"My Awesome List","description":"This list created."}),
+        success: function(data) {
+            console.log("success create list");
+            console.log(data);
+            // request_token = data.request_token;
+            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+function addMovieToList(list_id, session_id){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "http://api.themoviedb.org/3/list/" + list_id + "/add_item?api_key=" + API_KEY + "&session_id=" + session_id;;
+    var session_id = "";
+    return $.ajax({
+        url: urlString,
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: "{'media_id':'565'}",
+        success: function(data) {
+            console.log("success add mobie to list");
+            console.log(data);
+            // request_token = data.request_token;
+            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+function findMovieByImdbId(imdbId){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "https://api.themoviedb.org/3/find/" + imdbId + "?external_source=imdb_id&api_key=" + API_KEY;
+    //var session_id = "";
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            console.log("success find movie ");
+            console.log(imdbId);
+            console.log(data.movie_results[0].title);
+            console.log(data.movie_results[0].id);
+            // request_token = data.request_token;
+            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
 }
 
 function getGameInfo(gameId) {
@@ -900,7 +1128,7 @@ function getGameInfo(gameId) {
     }
     else {
         result = JSON.parse(localStorageGame);
-        //localStorage.removeItem(gameId);
+        localStorage.removeItem(gameId);
         return result;
     }
 
