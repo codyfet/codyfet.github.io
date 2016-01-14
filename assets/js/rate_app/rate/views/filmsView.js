@@ -9,25 +9,26 @@ rateApp.FilmsView = Backbone.View.extend({
 		"click .item" : "openDetails"
 	},
     request_token: "",
+    list_id: "5697c23f7536a13bcc00004e",
 
 	initialize: function(){
 
         // code that activates beforeRender and afterRender functions
-        _.bindAll(this, 'beforeRender', 'render', 'afterRender');
-        var _this = this;
-        this.render = _.wrap(this.render, function(render) {
-            _this.beforeRender();
-            render();
-            _this.afterRender();
-            return _this;
-        });
+        // _.bindAll(this, 'beforeRender', 'render', 'afterRender');
+        // var _this = this;
+        // this.render = _.wrap(this.render, function(render) {
+        //     _this.beforeRender();
+        //     render();
+        //     _this.afterRender();
+        //     return _this;
+        // });
 
         // films proccessing
         var that = this;
         var years = this.model.attributes.films;
 
         // my list
-        console.log("My List " + "5696687859663d1e0b000054");
+        console.log("My List " + this.list_id);
 
         // #1 Get REQUEST_TOKEN (TMDB)
         $.when(getRequestTokenTmdb()).then(function(resp_token){
@@ -42,6 +43,13 @@ rateApp.FilmsView = Backbone.View.extend({
                     $.when(getSessionId(that.request_token)).then(function(resp_session){
                         console.log("resp_session");
                         console.log(resp_session);
+                        $.when(getInfoAboutListTmdb(that.list_id)).then(function(response_list){
+                            //console.log("response_list");
+                            //console.log(response_list);
+                            var films = response_list.items;
+                            console.log(films);
+                            that.renderPosters(films);
+                        });
                     });
                 }
             });
@@ -84,15 +92,15 @@ rateApp.FilmsView = Backbone.View.extend({
 		return this;
 	},
 
-    beforeRender: function() {
-        //console.log('beforeRender');
-    },
+    // beforeRender: function() {
+    //     //console.log('beforeRender');
+    // },
 
-    afterRender: function() {
-        console.log('afterRender');
-        // control loading
-        //this.renderPosters();
-    },
+    // afterRender: function() {
+    //     console.log('afterRender');
+    //     // control loading
+    //     //this.renderPosters();
+    // },
 
 	"openDetails" : function(ev){
     	console.log("openDetails");
@@ -100,45 +108,23 @@ rateApp.FilmsView = Backbone.View.extend({
     	console.log(el);
     },
 
-    renderPoster : function(item){
-        var imdbId = item.imdbId;
-        var posterUrl = "";
-        if(item.imdbData != undefined){
-            posterUrl = item.imdbData.Poster;
-            var $row = $("#"+imdbId);
-            var $posterHolder = $row.find(".poster_holder");
-        }
-        else {
-            console.log("Doesn't exists imdbData for this item");
-        }
-        if(posterUrl != "" && posterUrl != "N/A"){
-            $posterHolder.css("background", "url(" + posterUrl + ")");
-            $posterHolder.css("background-size", "100%");
-            $posterHolder.css("background-repeat", "no-repeat");
-        }
-    },
-
-    renderPosters: function(item) {
+    renderPosters: function(films) {
 
         console.log("Render poster film");
-        var filmsyears = this.model.attributes.films;
-        $.each(filmsyears, function(index, model) {
-            $.each(model.fiction, function(index_, item_) {
-                var imdbId = item_.imdbId;
-                if (imdbId != undefined) {
 
-                    var posterUrl = item_.imdbData.Poster;
-                    var $row = $("#" + imdbId);
-                    var $posterHolder = $row.find(".poster_holder");
+        $.each(films, function(index, model) {
 
-                    if(posterUrl != "N/A" && $posterHolder.css("background-image") == "none"){
-                        $posterHolder.css("background", "url(" + posterUrl + ")");
-                        $posterHolder.css("background-size", "100%");
-                        $posterHolder.css("background-repeat", "no-repeat");
-                    }
+            var id = model.id;
+            var poster_url = model.poster_path;
+            var poster_path = "http://image.tmdb.org/t/p/w92" + poster_url;
 
-                }
-            });
+            var $row = $("#" + id);
+            var $posterHolder = $row.find(".poster_holder");
+
+            $posterHolder.css("background", "url(" + poster_path + ")");
+            $posterHolder.css("background-size", "100%");
+            $posterHolder.css("background-repeat", "no-repeat");
+
         });
 
     }

@@ -74,7 +74,7 @@
                             </thead>
                             <tbody>
                                 <% _.each(obj.fiction, function(obj_, index_) { %>
-                                    <tr id="<%=obj_.imdbId %>" class="item">
+                                    <tr id="<%=obj_.tmdbId %>" class="item">
                                         <td>
                                             <%= index_ + 1 %>
                                         </td>
@@ -108,7 +108,7 @@
                                 </thead>
                                 <tbody>
                                     <% _.each(obj.series, function(obj_, index_) { %>
-                                        <tr id="<%=obj_.imdbId %>" class="item">
+                                        <tr id="<%=obj_.tmdbId %>" class="item">
                                             <td>
                                                 <%= index_ + 1 %>
                                             </td>

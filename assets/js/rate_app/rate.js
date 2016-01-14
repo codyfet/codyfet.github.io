@@ -78,19 +78,19 @@ var multi = {
                 'year': 1998,
                 'imdb': 8.20,
                 'imdbId': "tt0118715",
-                'tmdbId': "26466"
+                'tmdbId': "115"
             }, {
                 'title': "Сияние",
                 'year': 1980,
                 'imdb': 8.50,
                 'imdbId': "tt0081505",
-                'tmdbId': "26466"
+                'tmdbId': "694"
             }, {
                 'title': "Шерлок (сериал)",
                 'year': '2010-2012',
                 'imdb': 9.30,
                 'imdbId': "tt1475582",
-                'tmdbId': "26466"
+                'tmdbId': "19885"
             }, {
                 'title': "Джанго освобожденный",
                 'year': 2012,
@@ -260,40 +260,44 @@ var multi = {
                 'year': 1975,
                 'imdb': 7.80,
                 'imdbId': "tt0073312",
-                'tmdbId': "26466"
+                'tmdbId': "11686"
             }, {
                 'title': "Робот по имени Чаппи",
                 'year': 2015,
                 'imdb': 6.90,
                 'imdbId': "tt1823672",
-                'tmdbId': "26466"
+                'tmdbId': "198184"
             }, {
                 'title': "Воспоминания об убийстве",
                 'year': 2003,
                 'imdb': 8.10,
                 'imdbId': "tt0353969",
-                'tmdbId': "26466"
+                'tmdbId': "11423"
             }],
             'series': [{
                 'title': "Фарго, сезон 1",
                 'year': 2014,
                 'imdb': 9.00,
-                'imdbId': "tt2802850"
+                'imdbId': "tt2802850",
+                'tmdbId': "60622"
             }, {
                 'title': "Настоящий детектив, сезон 1",
                 'year': 2014,
                 'imdb': 9.20,
-                'imdbId': "tt2356777"
+                'imdbId': "tt2356777",
+                'tmdbId': "46648"
             }, {
                 'title': "Настоящий детектив, сезон 2",
                 'year': 2015,
                 'imdb': 9.20,
-                'imdbId': "tt2356777"
+                'imdbId': "tt2356777",
+                'tmdbId': "46648"
             }, {
                 'title': "Мост, сезон 1",
                 'year': 2011,
                 'imdb': 8.60,
-                'imdbId': "tt1733785"
+                'imdbId': "tt1733785",
+                'tmdbId': "45016"
             }]
         }
     },
@@ -1027,7 +1031,7 @@ function createListTmdb(session_id){
         type: "POST",
         dataType: "json",
         contentType: "application/json",
-        data: "{'name':'Name1','description':'Description1'}",//JSON.stringify({"name":"My Awesome List","description":"This list created."}),
+        data: "{'name':'MyFilms','description':'Best films for all years'}",
         success: function(data) {
             console.log("success create list");
             console.log(data);
@@ -1042,24 +1046,70 @@ function createListTmdb(session_id){
 
 }
 
-function addMovieToList(list_id, session_id){
+function getInfoAboutListTmdb(list_id){
 
     // TMDB API_KEY
     var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
 
-    var urlString = "http://api.themoviedb.org/3/list/" + list_id + "/add_item?api_key=" + API_KEY + "&session_id=" + session_id;;
+    var urlString = "http://api.themoviedb.org/3/list/" + list_id + "?api_key=" + API_KEY;
+
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            console.log("success get list request");
+            console.log(data);
+            // request_token = data.request_token;
+            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+function addMovieToList(list_id, session_id, tmdbId){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+    //5697c23f7536a13bcc00004e
+
+    var urlString = "http://api.themoviedb.org/3/list/" + list_id + "/add_item?api_key=" + API_KEY + "&session_id=" + session_id;
     var session_id = "";
     return $.ajax({
         url: urlString,
         type: "POST",
         dataType: "json",
         contentType: "application/json",
-        data: "{'media_id':'565'}",
+        data: "{'media_id':'" + tmdbId + "'}",
         success: function(data) {
             console.log("success add mobie to list");
             console.log(data);
-            // request_token = data.request_token;
-            // return request_token;
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+function removieMovieFromList(list_id, session_id, tmdbId){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "http://api.themoviedb.org/3/list/" + list_id + "/remove_item?api_key=" + API_KEY + "&session_id=" + session_id;
+    return $.ajax({
+        url: urlString,
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: "{'media_id':'" + tmdbId + "'}",
+        success: function(data) {
+            console.log("success remove film from list");
+            console.log(data);
         },
         error: function() {
             // console.log("error");
