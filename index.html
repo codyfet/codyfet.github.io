@@ -74,14 +74,14 @@
                             </thead>
                             <tbody>
                                 <% _.each(obj.fiction, function(obj_, index_) { %>
-                                    <tr id="<%=obj_.tmdbId %>" class="item">
+                                    <tr id="<%=obj_.tmdbId %>" class="item <%=obj_.tmdbId %>">
                                         <td>
                                             <%= index_ + 1 %>
                                         </td>
                                         <td>
                                             <div class="poster_holder"></div>
                                         </td>
-                                        <td>
+                                        <td class="backdrop_holder">
                                             <%= obj_.title %>
                                         </td>
                                         <td>
@@ -108,14 +108,14 @@
                                 </thead>
                                 <tbody>
                                     <% _.each(obj.series, function(obj_, index_) { %>
-                                        <tr id="<%=obj_.tmdbId %>" class="item">
+                                        <tr id="<%=obj_.tmdbId %>" class="item <%=obj_.tmdbId %>">
                                             <td>
                                                 <%= index_ + 1 %>
                                             </td>
                                             <td>
                                                 <div class="poster_holder"></div>
                                             </td>
-                                            <td>
+                                            <td class="backdrop_holder">
                                                 <%= obj_.title %>
                                             </td>
                                             <td>

@@ -44,42 +44,42 @@ rateApp.FilmsView = Backbone.View.extend({
                         console.log("resp_session");
                         console.log(resp_session);
                         $.when(getInfoAboutListTmdb(that.list_id)).then(function(response_list){
-                            //console.log("response_list");
-                            //console.log(response_list);
                             var films = response_list.items;
                             console.log(films);
                             that.renderPosters(films);
+                            //that.renderBackdrops(films);
+                            that.renderPostersForTV();
                         });
                     });
                 }
             });
         });
 
-        $.each(years,function(index, item){
+        // $.each(years,function(index, item){
 
-            // load fiction films
-            // $.each(item.fiction, function(index_, item_){
-            //     if(item_.imdbId != undefined && item_.imdbId != ""){
-            //         $.when(getMovieInfoTmdb(item_.imdbId)).then(function(res){
-            //             item_.imdbData = new Object();
-            //             $.extend(item_.imdbData, res);
-            //             //that.renderPoster(item_);
-            //         });
-            //     }
-            // });
-            // load series films
-            // $.each(item.series, function(index_, item_){
+        //     // load fiction films
+        //     // $.each(item.fiction, function(index_, item_){
+        //     //     if(item_.imdbId != undefined && item_.imdbId != ""){
+        //     //         $.when(getMovieInfoTmdb(item_.imdbId)).then(function(res){
+        //     //             item_.imdbData = new Object();
+        //     //             $.extend(item_.imdbData, res);
+        //     //             //that.renderPoster(item_);
+        //     //         });
+        //     //     }
+        //     // });
+        //     // load series films
+        //     // $.each(item.series, function(index_, item_){
 
-            //     if(item_.imdbId != undefined && item_.imdbId != ""){
-            //         $.when(getMovieInfo(item_.imdbId)).then(function(res){
-            //             item_.imdbData = new Object();
-            //             $.extend(item_.imdbData, res);
-            //             //that.renderPoster(item_);
-            //         });
-            //     }
-            // });
+        //     //     if(item_.imdbId != undefined && item_.imdbId != ""){
+        //     //         $.when(getMovieInfo(item_.imdbId)).then(function(res){
+        //     //             item_.imdbData = new Object();
+        //     //             $.extend(item_.imdbData, res);
+        //     //             //that.renderPoster(item_);
+        //     //         });
+        //     //     }
+        //     // });
 
-        });
+        // });
 	},
 
 	render: function(){
@@ -105,7 +105,6 @@ rateApp.FilmsView = Backbone.View.extend({
 	"openDetails" : function(ev){
     	console.log("openDetails");
     	console.log(ev);
-    	console.log(el);
     },
 
     renderPosters: function(films) {
@@ -126,6 +125,72 @@ rateApp.FilmsView = Backbone.View.extend({
             $posterHolder.css("background-repeat", "no-repeat");
 
         });
+
+    },
+    renderBackdrops: function(films) {
+
+        console.log("Render backdrop film");
+
+        $.each(films, function(index, model) {
+
+            var id = model.id;
+            var backdrop_url = model.backdrop_path;
+            var backdrop_path = "http://image.tmdb.org/t/p/w92" + backdrop_url;
+
+            var $row = $("#" + id);
+            var $backdropHolder = $row.find(".backdrop_holder");
+
+            $backdropHolder.css("background", "url(" + backdrop_path + ")");
+            $backdropHolder.css("background-size", "100%");
+            $backdropHolder.css("background-repeat", "no-repeat");
+
+        });
+
+    },
+    renderPostersForTV: function() {
+
+        console.log("Render poster TV");
+
+        var series13 = multi.films.year2013.series;
+        var series15 = multi.films.year2015.series;
+        var series = $.merge(series13, series15);
+
+        $.each(series, function(index, item){
+            var imdbId = item.imdbId;
+            $.when(findMovieByImdbId(imdbId)).then(function(response){
+                console.log("imdbId");
+                console.log(imdbId);
+                console.log("response");
+                console.log(response);
+                var id = response.tv_results[0].id;
+                var tmdbData = response.tv_results[0];
+
+                var poster_url = tmdbData.poster_path;
+                var poster_path = "http://image.tmdb.org/t/p/w92" + poster_url;
+
+                var $row = $("." + id);
+                var $posterHolder = $row.find(".poster_holder");
+
+                $posterHolder.css("background", "url(" + poster_path + ")");
+                $posterHolder.css("background-size", "100%");
+                $posterHolder.css("background-repeat", "no-repeat");
+            });
+        });
+
+        // $.each(series, function(index, model) {
+
+        //     var id = model.id;
+        //     var poster_url = model.poster_path;
+        //     var poster_path = "http://image.tmdb.org/t/p/w92" + poster_url;
+
+        //     var $row = $("#" + id);
+        //     var $posterHolder = $row.find(".poster_holder");
+
+        //     $posterHolder.css("background", "url(" + poster_path + ")");
+        //     $posterHolder.css("background-size", "100%");
+        //     $posterHolder.css("background-repeat", "no-repeat");
+
+        // });
 
     }
 

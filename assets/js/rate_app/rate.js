@@ -85,13 +85,13 @@ var multi = {
                 'imdb': 8.50,
                 'imdbId': "tt0081505",
                 'tmdbId': "694"
-            }, {
+            }, /*{
                 'title': "Шерлок (сериал)",
                 'year': '2010-2012',
                 'imdb': 9.30,
                 'imdbId': "tt1475582",
                 'tmdbId': "19885"
-            }, {
+            },*/ {
                 'title': "Джанго освобожденный",
                 'year': 2012,
                 'imdb': 8.50,
@@ -134,7 +134,13 @@ var multi = {
                 'imdbId': "tt0795493",
                 'tmdbId': "4787"
             }],
-            'series': []
+            'series': [{
+                'title': "Шерлок (сериал)",
+                'year': '2010-2012',
+                'imdb': 9.30,
+                'imdbId': "tt1475582",
+                'tmdbId': "19885"
+            }]
         },
         'year2014': {
             'fiction': [{
@@ -154,7 +160,7 @@ var multi = {
                 'year': 2013,
                 'imdb': 8.30,
                 'imdbId': "tt0993846",
-                'tmdbId': "26466"
+                'tmdbId': "106646"
             }, {
                 'title': "Рокки",
                 'year': 1976,
@@ -242,7 +248,7 @@ var multi = {
                 'year': 2015,
                 'imdb': 8.60,
                 'imdbId': "tt2488496",
-                'tmdbId': "26466"
+                'tmdbId': "140607"
             }, {
                 'title': "Имя розы",
                 'year': 1986,
@@ -1131,8 +1137,12 @@ function findMovieByImdbId(imdbId){
         success: function(data) {
             console.log("success find movie ");
             console.log(imdbId);
-            console.log(data.movie_results[0].title);
-            console.log(data.movie_results[0].id);
+            console.log(data);
+            if(data.movie_results.length!=0){
+                console.log(data.movie_results[0].title);
+                console.log(data.movie_results[0].id);
+            }
+
             // request_token = data.request_token;
             // return request_token;
         },
