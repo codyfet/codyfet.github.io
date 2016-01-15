@@ -45,7 +45,6 @@ rateApp.FilmsView = Backbone.View.extend({
                         console.log(resp_session);
                         $.when(getInfoAboutListTmdb(that.list_id)).then(function(response_list){
                             var films = response_list.items;
-                            console.log(films);
                             that.renderPosters(films);
                             //that.renderBackdrops(films);
                             that.renderPostersForTV();
@@ -158,10 +157,6 @@ rateApp.FilmsView = Backbone.View.extend({
         $.each(series, function(index, item){
             var imdbId = item.imdbId;
             $.when(findMovieByImdbId(imdbId)).then(function(response){
-                console.log("imdbId");
-                console.log(imdbId);
-                console.log("response");
-                console.log(response);
                 var id = response.tv_results[0].id;
                 var tmdbData = response.tv_results[0];
 
