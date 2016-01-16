@@ -554,3 +554,8 @@ button.navbar-toggle {
 .main_l {
     padding-left: 15px;
 }
+
+.ajax_loader {
+    background: url(../img/ajax-loader.gif) no-repeat;
+	background-position: 50%;
+}
