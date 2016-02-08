@@ -26,6 +26,9 @@
     </script>
     -->
 
+    <script type="text/javascript" src="assets/js/plugins/jQuery-Autocomplete-master/dist/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/jQuery-Autocomplete-master/scripts/countries.js"></script>
+
     <!-- TEMPLATES -->
     <script type="text/template" id="mainWrapper">
         <div class="row centered mt grid">
@@ -242,7 +245,7 @@
                                         <td>
                                             <%= index_ + 1 %>
                                         </td>
-                                        <td class="ajax_loader">
+                                        <td>
                                             <div class="game_poster_holder"></div>
                                         </td>
                                         <td>
@@ -265,6 +268,14 @@
                 <img class="arrow_img right_arrow" src="assets/img/next152.png" alt="">
             </div>
         </div>
+    </script>
+    <script type="text/template" id="dailyFilmsTemplate">
+
+        <div class="row dailyWrapper centered mt grid" style="position:relative">
+            Hello world
+            <input type="text" name="country" id="autocomplete"/>
+        </div>
+
     </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -314,6 +325,13 @@
                         </a>
                         <div class="small_label hovered_text">ИГРЫ</div>
                     </div>
+                    <div class="nav navbar-nav parent ">
+                        <a class="daily_films_link" href="#dailyfilms" style="position: relative">
+                            <div class="small_img img_ small_img_daily_films"></div>
+                            <div class="small_img img_ small_img_new_icon"></div>
+                        </a>
+                        <div class="small_label hovered_text">DAILY</div>
+                    </div>
                 </div>
             </div>
             <!--/.nav-collapse -->
@@ -360,6 +378,7 @@
     <script src="assets/js/rate_app/rate/views/filmsView.js"></script>
     <script src="assets/js/rate_app/rate/views/booksView.js"></script>
     <script src="assets/js/rate_app/rate/views/gamesView.js"></script>
+    <script src="assets/js/rate_app/rate/views/dailyFilmsView.js"></script>
     <script src="assets/js/rate_app/rate.js"></script>
 </body>
 

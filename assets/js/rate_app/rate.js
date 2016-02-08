@@ -816,7 +816,8 @@ var Router = Backbone.Router.extend({
         "": "openMain",
         "books": "openBooks",
         "films": "openFilms",
-        "games": "openGames"
+        "games": "openGames",
+        "dailyfilms": "openDailyFilms"
             // "edit/:index": "editToDo",
             // "delete/:index": "delteToDo"
     },
@@ -849,6 +850,16 @@ var Router = Backbone.Router.extend({
         $('.main').html('');
 
         var mainSection = new rateApp.GamesView({
+            model: mainView.model,
+            el: $('.main')
+        });
+        mainSection.render();
+    },
+
+    'openDailyFilms': function() {
+        $('.main').html('');
+
+        var mainSection = new rateApp.DailyFilmsView({
             model: mainView.model,
             el: $('.main')
         });
