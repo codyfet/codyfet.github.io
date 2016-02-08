@@ -355,6 +355,20 @@ hr {
     width: 48px;
 }
 
+.small_img_daily_films {
+    background-image: url(../img/new/1_small.jpg);
+    height: 48px;
+    width: 48px;
+}
+
+div.small_img_new_icon {
+    background-image: url(../img/new/new-icon.png);
+    position: absolute;
+    top: -57px;
+    right: -60px;
+    opacity: 1 !important;
+}
+
 #f p {
     color: white;
     text-align: right;
@@ -558,4 +572,9 @@ button.navbar-toggle {
 .ajax_loader {
     background: url(../img/ajax-loader.gif) no-repeat;
 	background-position: 50%;
+}
+
+/* Daily */
+.dailyWrapper {
+    min-height: 150px;
 }
