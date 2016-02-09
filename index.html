@@ -280,7 +280,39 @@
     <script type="text/template" id="wishlistTemplate">
 
         <div class="row wishlistWrapper centered mt grid" style="position:relative">
-            Hello It is wishlist
+            <% _.each(wishlist.sections, function(section, index) { %>
+                <div class="table_label"><%= section.sectionLabel %></div>
+                <table class="table table_wishlist table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="col1">Статус</th>
+                            <th class="col1">Автор</th>
+                            <th class="col2">Название</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% _.each(section.sectionList, function(obj_, index_) { %>
+                            <tr id="" class="item">
+                                <td class="circle-cell">
+                                    <div class="circle-status"></div>
+                                    <div class="statuses">
+                                        <div class="circle-status panel-item plus-pos"></div>
+                                        <div class="circle-status panel-item point"></div>
+                                        <div class="circle-status panel-item plus-neg"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <%= obj_.author %>
+                                </td>
+                                <td>
+                                    <%= obj_.title %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+            <% }); %>
+
         </div>
 
     </script>

@@ -72,66 +72,69 @@ var multi = {
         },
         'year2013': {
             'fiction': [{
-                'title': "Большой Лебовски",
-                'year': 1998,
-                'imdb': 8.20,
-                'imdbId': "tt0118715",
-                'tmdbId': "115"
-            }, {
-                'title': "Сияние",
-                'year': 1980,
-                'imdb': 8.50,
-                'imdbId': "tt0081505",
-                'tmdbId': "694"
-            }, /*{
-                'title': "Шерлок (сериал)",
-                'year': '2010-2012',
-                'imdb': 9.30,
-                'imdbId': "tt1475582",
-                'tmdbId': "19885"
-            },*/ {
-                'title': "Джанго освобожденный",
-                'year': 2012,
-                'imdb': 8.50,
-                'imdbId': "tt0060315",
-                'tmdbId': "10772"
-            }, {
-                'title': "Бэтмен (трилогия)",
-                'year': '2005-2012',
-                'imdb': '7.98 8.49 8.33',
-                'imdbId': "tt0468569",
-                'tmdbId': "155"
-            }, {
-                'title': "Церемония",
-                'year': 1995,
-                'imdb': 7.60,
-                'imdbId': "tt0112769",
-                'tmdbId': "1802"
-            }, {
-                'title': "Вспомнить все",
-                'year': 2012,
-                'imdb': 6.30,
-                'imdbId': "tt1386703",
-                'tmdbId': "64635"
-            }, {
-                'title': "Беспредел",
-                'year': 2010,
-                'imdb': 6.80,
-                'imdbId': "tt1462667",
-                'tmdbId': "45284"
-            }, {
-                'title': "Пипец",
-                'year': 2010,
-                'imdb': 7.80,
-                'imdbId': "tt1250777",
-                'tmdbId': "23483"
-            }, {
-                'title': "Мечта кассандры",
-                'year': 2007,
-                'imdb': 6.70,
-                'imdbId': "tt0795493",
-                'tmdbId': "4787"
-            }],
+                    'title': "Большой Лебовски",
+                    'year': 1998,
+                    'imdb': 8.20,
+                    'imdbId': "tt0118715",
+                    'tmdbId': "115"
+                }, {
+                    'title': "Сияние",
+                    'year': 1980,
+                    'imdb': 8.50,
+                    'imdbId': "tt0081505",
+                    'tmdbId': "694"
+                },
+                /*{
+                               'title': "Шерлок (сериал)",
+                               'year': '2010-2012',
+                               'imdb': 9.30,
+                               'imdbId': "tt1475582",
+                               'tmdbId': "19885"
+                           },*/
+                {
+                    'title': "Джанго освобожденный",
+                    'year': 2012,
+                    'imdb': 8.50,
+                    'imdbId': "tt0060315",
+                    'tmdbId': "10772"
+                }, {
+                    'title': "Бэтмен (трилогия)",
+                    'year': '2005-2012',
+                    'imdb': '7.98 8.49 8.33',
+                    'imdbId': "tt0468569",
+                    'tmdbId': "155"
+                }, {
+                    'title': "Церемония",
+                    'year': 1995,
+                    'imdb': 7.60,
+                    'imdbId': "tt0112769",
+                    'tmdbId': "1802"
+                }, {
+                    'title': "Вспомнить все",
+                    'year': 2012,
+                    'imdb': 6.30,
+                    'imdbId': "tt1386703",
+                    'tmdbId': "64635"
+                }, {
+                    'title': "Беспредел",
+                    'year': 2010,
+                    'imdb': 6.80,
+                    'imdbId': "tt1462667",
+                    'tmdbId': "45284"
+                }, {
+                    'title': "Пипец",
+                    'year': 2010,
+                    'imdb': 7.80,
+                    'imdbId': "tt1250777",
+                    'tmdbId': "23483"
+                }, {
+                    'title': "Мечта кассандры",
+                    'year': 2007,
+                    'imdb': 6.70,
+                    'imdbId': "tt0795493",
+                    'tmdbId': "4787"
+                }
+            ],
             'series': [{
                 'title': "Шерлок (сериал)",
                 'year': '2010-2012',
@@ -632,170 +635,230 @@ var multi = {
             'title': "MTG: Duels of planewalkers 2013",
             'year': 2012,
             'metacritic': 77,
-            'giantBombId':"3030-37907"
+            'giantBombId': "3030-37907"
         }, {
             'title': "Mass Effect 2",
             'year': 2010,
             'metacritic': 94,
-            'giantBombId':"3030-21590"
+            'giantBombId': "3030-21590"
         }, {
             'title': "Grand Theft Auto 4",
             'year': 2008,
             'metacritic': 90,
-            'giantBombId':"3030-20457"
+            'giantBombId': "3030-20457"
         }, {
             'title': "Risen",
             'year': 2009,
             'metacritic': 77,
-            'giantBombId':"3030-23081"
+            'giantBombId': "3030-23081"
         }, {
             'title': "Hitman",
             'year': 2000,
             'metacritic': 73,
-            'giantBombId':"3030-6709"
+            'giantBombId': "3030-6709"
         }, {
             'title': "Braid",
             'year': 2010,
             'metacritic': 90,
-            'giantBombId':"3030-20716"
+            'giantBombId': "3030-20716"
         }],
         'year2013': [{
             'title': "Walking Dead. Season 1",
             'year': 2012,
             'metacritic': 82,
-            'giantBombId':"3030-34205"
+            'giantBombId': "3030-34205"
         }, {
             'title': "Mass Effect 3",
             'year': 2012,
             'metacritic': 89,
-            'giantBombId':"3030-29935"
+            'giantBombId': "3030-29935"
         }, {
             'title': "Sleeping Dogs",
             'year': 2012,
             'metacritic': 81,
-            'giantBombId':"3030-29441"
+            'giantBombId': "3030-29441"
         }, {
             'title': "Sword of the Stars: the Pit",
             'year': 2013,
             'metacritic': 68,
-            'giantBombId':"3030-41913"
+            'giantBombId': "3030-41913"
         }, {
             'title': "Hotline Miami",
             'year': 2012,
             'metacritic': 85,
-            'giantBombId':"3030-39452"
+            'giantBombId': "3030-39452"
         }, {
             'title': "The Binding of Isaac",
             'year': 2011,
             'metacritic': 84,
-            'giantBombId':"3030-35899"
+            'giantBombId': "3030-35899"
         }, {
             'title': "Mafia 2",
             'year': 2010,
             'metacritic': 74,
-            'giantBombId':"3030-20538"
+            'giantBombId': "3030-20538"
         }, {
             'title': "Alan Wake",
             'year': 2012,
             'metacritic': 83,
-            'giantBombId':"3030-20982"
+            'giantBombId': "3030-20982"
         }, {
             'title': "Just Cause 2. Multiplayer mod",
             'year': 2010,
             'metacritic': 84,
-            'giantBombId':"3030-20742"
+            'giantBombId': "3030-20742"
         }, {
             'title': "Chaos Engine",
             'year': 1993,
             'metacritic': 40,
-            'giantBombId':"3030-948"
+            'giantBombId': "3030-948"
         }],
         'year2014': [{
             'title': "Dragon age: Origins",
             'year': 2009,
             'metacritic': 91,
-            'giantBombId':"3030-20738"
+            'giantBombId': "3030-20738"
         }, {
             'title': "XCOM: Enemy unknown",
             'year': 2013,
             'metacritic': 91,
-            'giantBombId':"3030-37152"
+            'giantBombId': "3030-37152"
         }, {
             'title': "Walking dead: Season 2",
             'year': 2014,
             'metacritic': 87,
-            'giantBombId':"3030-39042"
+            'giantBombId': "3030-39042"
         }, {
             'title': "The wolf among us",
             'year': 2014,
             'metacritic': 84,
-            'giantBombId':"3030-34213"
+            'giantBombId': "3030-34213"
         }, {
             'title': "Don't starve",
             'year': 2013,
             'metacritic': 79,
-            'giantBombId':"3030-39664"
+            'giantBombId': "3030-39664"
         }, {
             'title': "F1 2013",
             'year': 2013,
             'metacritic': 77,
-            'giantBombId':"3030-43251"
+            'giantBombId': "3030-43251"
         }, {
             'title': "Sniper elite V2",
             'year': 2012,
             'metacritic': 66,
-            'giantBombId':"3030-34715"
+            'giantBombId': "3030-34715"
         }, {
             'title': "FEZ",
             'year': 2013,
             'metacritic': 91,
-            'giantBombId':"3030-24768"
+            'giantBombId': "3030-24768"
         }, {
             'title': "Bioshock",
             'year': 2007,
             'metacritic': 96,
-            'giantBombId':"3030-17280"
+            'giantBombId': "3030-17280"
         }, {
             'title': "Worms Armageddon",
             'year': 1999,
             'metacritic': "-",
-            'giantBombId':"3030-17255"
+            'giantBombId': "3030-17255"
         }],
         'year2015': [{
             'title': "This war of mine",
             'year': 2014,
             'metacritic': 83,
-            'giantBombId':"3030-45657"
+            'giantBombId': "3030-45657"
         }, {
             'title': "Don't starve together",
             'year': 2014,
             'metacritic': 79,
-            'giantBombId':"3030-39664"
+            'giantBombId': "3030-39664"
         }, {
             'title': "Binding of Isaac: Rebirth",
             'year': 2014,
             'metacritic': 86,
-            'giantBombId':"3030-40865"
+            'giantBombId': "3030-40865"
         }, {
             'title': "XCOM: Enemy within",
             'year': 2014,
             'metacritic': 92,
-            'giantBombId':"3030-43648"
+            'giantBombId': "3030-43648"
         }, {
             'title': "Chess.com",
             'year': 2005,
             'metacritic': "-",
-            'giantBombId':"3030-37907"
+            'giantBombId': "3030-37907"
         }, {
             'title': "Rogue Legacy",
             'year': 2013,
             'metacritic': 85,
-            'giantBombId':"3030-42828"
+            'giantBombId': "3030-42828"
         }, {
             'title': "Hearthstone",
             'year': 2014,
             'metacritic': 88,
-            'giantBombId':"3030-42033"
+            'giantBombId': "3030-42033"
         }]
+    },
+    'wishlist': {
+        "sections" : [
+            {
+                "sectionLabel" : "Математика, Статистика",
+                "sectionList" : [{
+                    "author": "Леонард Млодинов",
+                    "title": "Несовершенная случайность"
+                }, {
+                    "author": "Стивен Строгац",
+                    "title": "Удовольствие от Х"
+                },{
+                    "author": "Франк Рюзе",
+                    "title": "Ноль. Биография опсаной идеи"
+                }, {
+                    "author": "Артур Бенджамин",
+                    "title": "Магия чисел"
+                },{
+                    "author": "Иэн Стюарт",
+                    "title": "Величайшие математические задачи"
+                }, {
+                    "author": "Нассим Талеб",
+                    "title": "Черный лебедь"
+                },{
+                    "author": "Нассим Талеб",
+                    "title": "Антихрупкость"
+                }, {
+                    "author": "Эрик Сигель",
+                    "title": "Просчитать будущее. Кто кликнет, купит, соврет или умрет"
+                }]
+            },
+            {
+                "sectionLabel" : "Психология, Парадоксы, Время, Память",
+                "sectionList" : [{
+                    "author": "Леонард Млодинов",
+                    "title": "Несовершенная случайность"
+                }, {
+                    "author": "Стивен Строгац",
+                    "title": "Удовольствие от Х"
+                },{
+                    "author": "Франк Рюзе",
+                    "title": "Ноль. Биография опсаной идеи"
+                }, {
+                    "author": "Артур Бенджамин",
+                    "title": "Магия чисел"
+                },{
+                    "author": "Иэн Стюарт",
+                    "title": "Величайшие математические задачи"
+                }, {
+                    "author": "Нассим Талеб",
+                    "title": "Черный лебедь"
+                },{
+                    "author": "Нассим Талеб",
+                    "title": "Антихрупкость"
+                }, {
+                    "author": "Эрик Сигель",
+                    "title": "Просчитать будущее. Кто кликнет, купит, соврет или умрет"
+                }]
+            }
+        ]
     }
 };

@@ -5,8 +5,17 @@ rateApp.WishlistView = Backbone.View.extend({
     tagName: 'div',
     template: $("#wishlistTemplate").html(),
     events: {
+        'mouseover .circle-status': 'circleMouseOver',
+        'mouseout .circle-status': 'circleMouseOut',
+        'mouseover .panel-item': 'panelItemMouseOver',
+        'mouseout .panel-item': 'panelItemMouseOut',
+        'click .panel-item': 'panelItemClick'
 
+        //'mouseout .circle-cell': 'circleCellMouseOut'
+
+       // 'mouseover .statuses': 'outStatuses'
     },
+    timerStatusesPanelID : null,
 
     initialize: function() {
 
@@ -20,8 +29,9 @@ rateApp.WishlistView = Backbone.View.extend({
             return _this;
         });
 
-        // games proccessing
+
         var that = this;
+
         // var years = this.model.attributes.games;
         // $.each(years, function(index, item) {
 
@@ -53,6 +63,62 @@ rateApp.WishlistView = Backbone.View.extend({
         console.log('beforeRender');
     },
 
+    circleMouseOver: function(ev){
+        console.log("MOUSEOVER");
+
+        clearTimeout(this.timerStatusesPanelID);
+
+        var $statusesPanel = $(ev.target).closest(".circle-cell").find(".statuses");
+        $.each($(".statuses"), function(index, item){
+            if(!$(item).is($statusesPanel)){
+                $(item).hide();
+            }
+        });
+
+        $statusesPanel.fadeTo("slow", 1);
+
+    },
+    circleMouseOut: function(ev){
+        console.log("MOUSEOUT");
+        var $statusesPanel = $(ev.target).closest(".circle-cell").find(".statuses");
+        var that = this;
+        if(this.timerStatusesPanelID != null){
+            clearTimeout(that.timerStatusesPanelID);
+        }
+        this.timerStatusesPanelID = setTimeout(function(){
+            if($('.panel-item:hover').length == 0) {
+                $statusesPanel.hide();
+            }
+        },500);
+
+    },
+
+    panelItemMouseOver: function(ev){
+        $(ev.target).css("opacity","1");
+    },
+    panelItemMouseOut: function(ev){
+        $(ev.target).css("opacity","0.5");
+    },
+    panelItemClick: function(ev){
+        $(ev.target).closest(".statuses").hide();
+        var $statusEl = $(ev.target).closest(".circle-cell").find(".circle-status");
+        var $statusTr = $(ev.target).closest("tr");
+        $statusEl.removeClass("circle-status-point circle-status-plus-pos circle-status-plus-neg");
+        $statusTr.removeClass("red-tr green-tr");
+
+        if($(ev.target).hasClass("plus-pos")){
+            $statusEl.addClass("circle-status-plus-pos");
+        }
+        else if($(ev.target).hasClass("plus-neg")){
+            $statusEl.addClass("circle-status-plus-neg");
+            $statusTr.addClass("red-tr");
+        }
+        else if($(ev.target).hasClass("point")){
+            $statusEl.addClass("circle-status-point");
+            $statusTr.addClass("green-tr");
+        }
+
+    },
     afterRender: function() {
         console.log('afterRender');
 

@@ -139,6 +139,10 @@ function getMovieInfo(IMDBid) {
     }
 }
 
+//GOODREADS
+var goodReadsKey= "DNGTbNYjOWONrjvdS2Cwg";
+var goodReadsSecret= "nny5r4kgV5xvY1a9SvrAsUAKi6Jgr45K4F3ohnABwo";
+
 // tmdb
 function getMovieInfoTmdb(IMDBid) {
 
