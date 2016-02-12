@@ -378,6 +378,72 @@ function findMovieByImdbId(imdbId){
 
 }
 
+function findMovieById(tmdbId){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "http://api.themoviedb.org/3/movie/" + tmdbId + "?&api_key=" + API_KEY;
+    //var session_id = "";
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            console.log("success find movie by id ");
+            console.log(data);
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+
+function findPersonByName(query){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "http://api.themoviedb.org/3/search/person?query=" + query + "&api_key=" + API_KEY;
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            console.log("success find person ");
+            console.log(query);
+            console.log(data);
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+
+function getCreditsByPersonId(idPerson){
+
+    // TMDB API_KEY
+    var API_KEY = "37662c76ffc19e5cd1b95f37d77155fc";
+
+    var urlString = "http://api.themoviedb.org/3/person/" + idPerson + "/movie_credits" + "?api_key=" + API_KEY;
+    return $.ajax({
+        url: urlString,
+        success: function(data) {
+            console.log("success find credits by person ");
+            console.log(data);
+        },
+        error: function() {
+            // console.log("error");
+            // console.log(data);
+        }
+    });
+
+}
+
+//http://api.themoviedb.org/3/person/id/movie_credits
+
 function getGameInfo(gameId) {
 
     var result = "";

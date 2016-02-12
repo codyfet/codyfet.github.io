@@ -582,8 +582,64 @@ button.navbar-toggle {
 
 /* Daily */
 .dailyWrapper {
-    min-height: 150px;
+    min-height: 285px;
 }
+.actorBlock{
+    width: 140px;
+    float: left;
+    height: 200px;
+    border-radius: 5px;
+    margin: 0 10px;
+    position: relative;
+}
+.actorBlock img{
+    padding: 10px;
+}
+
+#searchclear {
+    position: absolute;
+    right: 7px;
+    top: 28px;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
+}
+.removeBlock {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    height: 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.findMoviesButton {
+    padding: 5px 15px;
+    height: 45px;
+    border: 1px solid #B9B9B9;
+    color: #848181;    
+
+}
+.findMoviesButton:hover {
+    background: #74cfae;
+    border: 0;
+    color: #FBFBFB;
+}
+.autocomplete-suggestions{
+    background: white;
+    overflow: auto;
+}
+.autocomplete-suggestion{
+    padding: 1px 5px;
+}
+.autocomplete-selected{
+    background: #D4FFFD;
+}
+
+
 
 /* Wishlist */
 .table_wishlist{

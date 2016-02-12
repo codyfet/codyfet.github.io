@@ -272,8 +272,21 @@
     <script type="text/template" id="dailyFilmsTemplate">
 
         <div class="row dailyWrapper centered mt grid" style="position:relative">
-            Hello world
-            <input type="text" name="country" id="autocomplete"/>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <div class="btn-group">
+                        <label for="search-actors-autocomplete">Search some actors or actress</label>
+                        <input type="text" class="form-control" id="search-actors-autocomplete" placeholder="" style="width: 300px;">
+                        <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row actorsPanel centered mt grid" style="position:relative"></div>
+
+            <input class="btn btn-default findMoviesButton" type="button" value="Find movies" style="display:none">
+
+            <div class="row resultsPanel centered mt grid" style="position:relative"></div>
+
         </div>
 
     </script>
