@@ -392,8 +392,8 @@ function findMovieById(tmdbId){
             console.log(data);
         },
         error: function() {
-            // console.log("error");
-            // console.log(data);
+            console.log("error");
+            console.log(data);
         }
     });
 

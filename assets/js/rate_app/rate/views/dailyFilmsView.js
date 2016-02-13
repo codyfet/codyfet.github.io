@@ -26,22 +26,8 @@ rateApp.DailyFilmsView = Backbone.View.extend({
             return _this;
         });
 
-        // games proccessing
-        var that = this;
-        // var years = this.model.attributes.games;
-        // $.each(years, function(index, item) {
-
-        //     $.each(item, function(index_, item_) {
-        //         if (item_.giantBombId != undefined && item_.giantBombId != "") {
-        //             $.when(getGameInfo(item_.giantBombId)).then(function(res) {
-        //                 item_.giantBombData = new Object();
-        //                 $.extend(item_.giantBombData, res);
-        //                 //that.renderPoster(item_);
-        //             });
-        //         }
-        //     });
-
-        // });
+		this.choosedPersonCollection = new rateApp.PersonsCollection();
+		this.choosedPersonMovieCreditsCollection = new rateApp.PersonMovieCreditsCollection();
 
     },
 
@@ -112,14 +98,23 @@ rateApp.DailyFilmsView = Backbone.View.extend({
             },
             minChars:3,
             onSelect: function(suggestion) {
+				console.log("ONSELECT");
+				var person = new rateApp.PersonModel(suggestion.data);
+				console.log(person);
+				that.choosedPersonCollection.add(person);
+				console.log(that.choosedPersonCollection);
                 //alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+				
                 that.choosedPersons.push(suggestion);
-                $.when(getCreditsByPersonId(suggestion.data.id)).then(function(responseCredits){
-                    that.choosedPersonsMovies.push(responseCredits.cast);
+                $.when(getCreditsByPersonId(suggestion.data.id)).then(function(responseCredits){                    
+					var personMovieCredits = new rateApp.PersonMovieCreditsModel(responseCredits);
+					that.choosedPersonMovieCreditsCollection.add(personMovieCredits);					
+					//that.choosedPersonsMovies.push(responseCredits.cast);
                     that.createActorElement(suggestion.data.profile_path, suggestion.data.name, suggestion.data.id);
                     $("#search-actors-autocomplete").val('');
                     $(".findMoviesButton").show();
                 });
+				
 
             }
 
@@ -134,11 +129,20 @@ rateApp.DailyFilmsView = Backbone.View.extend({
         var block = $("<div id='actorid_" + idActor + "' class='actorBlock'><img src='http://image.tmdb.org/t/p/w92" + imgSrc + "'/><span class='glyphicon glyphicon-remove-circle removeBlock'></span><div>" + name + "</div></div>")
         $(".actorsPanel").append(block);
         $(".resultsPanel").html("");
-        this.clickFindMovies();
+        this.updateResults();
 
     },
     createMovieElement : function(imgSrc, title){
-        var block = $("<div class='actorBlock'><img src='http://image.tmdb.org/t/p/w92" + imgSrc + "'/><div>" + title + "</div></div>")
+		var image_path = "";
+		var noImageValue = "";
+		if(imgSrc==null){
+			image_path = "";	
+			noImageValue = "no-image";		
+		}
+		else{
+			image_path = "http://image.tmdb.org/t/p/w92" + imgSrc;
+		}
+        var block = $("<div class='actorBlock " + noImageValue + "'><img src='" + image_path + "'/><div>" + title + "</div></div>")
         $(".resultsPanel").append(block);
     },
     actorBlockMouseOver:function(ev){
@@ -156,45 +160,69 @@ rateApp.DailyFilmsView = Backbone.View.extend({
         //}, 500);
     },
     clickFindMovies : function(){
+		this.updateResults();
+    },
+	updateResults: function(){
         console.log("click find");
-        console.log(this.choosedPersons);
-        console.log(this.choosedPersonsMovies);
+        //console.log(this.choosedPersons);
+        //console.log(this.choosedPersonsMovies);
 
         var that = this;
 
-        if(this.choosedPersonsMovies.length>1){
-            var sampleObject = this.choosedPersonsMovies[0];
+        if(this.choosedPersonMovieCreditsCollection.length>1){
+			/*
+			var sampleObject = this.choosedPersonMovieCreditsCollection.at(0);
+			var resultCollection = new rateApp.PersonMovieCreditsCollection();
+			$(".resultsPanel").html("");
+			this.choosedPersonMovieCreditsCollection.each(function(personMovieCredits, index){
+				if(index!=0){
+					sampleObject.each(function(sampleObjectItem, index_){
+						var tempPersonMovieCreditsCollection = new rateApp.PersonMovieCreditsCollection();
+						personMovieCredits.each(function(personMovieCreditsItem, index__){
+							if(personMovieCreditsItem.get("id")==sampleObjectItem.get("id")){
+								tempPersonMovieCreditsCollection.add(sampleObjectItem);
+							}
+							tempPersonMovieCreditsCollection.each(function(tempItem, ind){
+								resultCollection.add(tempItem);
+							})
+						});
+					});
+				}
+			});
+			console.log("resultCollection");
+			console.log(resultCollection);
+			*/
+			var sampleObject = this.choosedPersonMovieCreditsCollection.at(0);
+			var sampleObjectCast = sampleObject.get("cast");
             var res = [];
-            var sampleIdArr = [];
-            $.each(this.choosedPersonsMovies, function(index, moviesOther){
-                if(index!=0){
-                    $.each(sampleObject, function(index, movieSample){
-                        $.each(moviesOther, function(index_, movieOther){
-                            if(movieSample.id==movieOther.id){
-                                if(res.length>0 && $.inArray(res, movieSample.id)!=-1){
-                                    if($.inArray(res,movieSample.id)==-1){
-                                        res.push(movieSample.id);
-                                    }
-                                }
-                                else if(res.length==0){
-                                    if($.inArray(res,movieSample.id)==-1){
-                                        res.push(movieSample.id);
-                                    }
-                                }
-                            }
-                        })
-                    });
-                }
-                console.log("res");
-                console.log(res);
-            });
-            $.each(res, function(ind, model){
-                $.when(findMovieById(res[ind])).then(function(responseMovie){
-                    that.createMovieElement(responseMovie.poster_path, responseMovie.title);//$(".resultsPanel").append($("<div>" + responseMovie.id + " " + responseMovie.title + " " + responseMovie.poster_path + "</div>"));
+			$(".resultsPanel").html("");
+			this.choosedPersonMovieCreditsCollection.each(function(personMovieCredits, index){
+				if(index!=0){
+					res = [];
+					$.each(sampleObjectCast, function(index_, model){						
+						var tmp = [];						
+						$.each(personMovieCredits.get("cast"), function(ind, movieOther){
+							if(movieOther.id==model.id){
+								tmp.push(model);
+							}
+						});
+						$.each(tmp, function(i, m){
+							res.push(m); // if ....							
+						});									
+					});
+					sampleObjectCast = JSON.parse(JSON.stringify(res));
+				}
+			});
+			console.log("res");
+			console.log(res);	
+		    $.each(res, function(ind, model){
+                $.when(findMovieById(model.id)).then(function(responseMovie){
+					that.createMovieElement(responseMovie.poster_path, responseMovie.title);//$(".resultsPanel").append($("<div>" + responseMovie.id + " " + responseMovie.title + " " + responseMovie.poster_path + "</div>"));
                 });
             });
+
         }
-    },
+	},
     removeActor: function(ev){
         console.log("removeActor");
         console.log(ev.target);

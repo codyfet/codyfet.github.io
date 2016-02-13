@@ -594,6 +594,13 @@ button.navbar-toggle {
 }
 .actorBlock img{
     padding: 10px;
+	min-height: 200px;
+	width: 100%;	
+}
+.actorBlock.no-image{
+	background: url(../img/new/no-image-small.jpg) no-repeat;
+	background-size: 100%;
+	margin: 10px;
 }
 
 #searchclear {
