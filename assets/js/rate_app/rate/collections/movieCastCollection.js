@@ -7,8 +7,8 @@ rateApp.MovieCastCollection = Backbone.Collection.extend({
         this.sort_key = 'release_date';
     },
     comparator: function(a, b) {
-        a = a.get(this.sort_key);
-        b = b.get(this.sort_key);
+        a = a.attributes.release_date;
+        b = b.attributes.release_date;
         return a < b ?  1
              : a > b ? -1
              :          0;

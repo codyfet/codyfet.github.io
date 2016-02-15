@@ -36,7 +36,7 @@ var RowView = Backbone.View.extend({
     },
     //model: peopleCollection.models,
     render: function () {
-         var html=_.template(rowTemplate,this.model.toJSON());
+         var html=_.template(rowTemplate,this.model.attributes.toJSON());
          this.setElement( $(html) );
          return this;
     },

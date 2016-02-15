@@ -85,6 +85,8 @@ rateApp.DailyFilmsView = Backbone.View.extend({
 
                 that.choosedPersons.push(suggestion);
                 $.when(getCreditsByPersonId(suggestion.data.id)).then(function(responseCredits) {
+                    var castCollection = new rateApp.MovieCastCollection(responseCredits.cast);
+                    responseCredits.cast = castCollection;
                     var personMovieCredits = new rateApp.PersonMovieCreditsModel(responseCredits);
                     that.choosedPersonMovieCreditsCollection.add(personMovieCredits);
                     //that.choosedPersonsMovies.push(responseCredits.cast);
@@ -173,15 +175,17 @@ rateApp.DailyFilmsView = Backbone.View.extend({
             var sampleObjectCast = sampleObject.get("cast");
             var res = [];
             var resultsCollection = new rateApp.MovieCastCollection();
+            var tempResultsCollection = new rateApp.MovieCastCollection();
             $(".resultsPanel").html("");
             this.choosedPersonMovieCreditsCollection.each(function(personMovieCredits, index) {
                 //if (index != 0) {
                     res = [];
                     resultsCollection.reset();
-                    $.each(sampleObjectCast, function(index_, model) {
+                    //$.each(sampleObjectCast, function(index_, model) {
+                    sampleObjectCast.each(function(model, index_){
                         var tmp = [];
-                        var tempResultsCollection = new rateApp.MovieCastCollection();
-                        $.each(personMovieCredits.get("cast"), function(ind, movieOther) {
+                        // var tempResultsCollection = new rateApp.MovieCastCollection();
+                        personMovieCredits.get("cast").each(function(movieOther, ind) {
                             if (movieOther.id == model.id) {
                                 var castItem = new rateApp.MovieCastModel(model);
                                 tmp.push(model);
@@ -191,9 +195,9 @@ rateApp.DailyFilmsView = Backbone.View.extend({
                         $.each(tmp, function(i, m) {
                             res.push(m); // if ....
                         });
-                        tempResultsCollection.each(function(m, i) {
-                            resultsCollection.add(m);
-                        });
+                        // tempResultsCollection.each(function(m, i) {
+                        //     resultsCollection.add(m);
+                        // });
                     });
                     sampleObjectCast = JSON.parse(JSON.stringify(res));
                 //}
@@ -205,9 +209,9 @@ rateApp.DailyFilmsView = Backbone.View.extend({
                     that.createMovieElement(model.poster_path, model.title, model.id); //$(".resultsPanel").append($("<div>" + responseMovie.id + " " + responseMovie.title + " " + responseMovie.poster_path + "</div>"));
                 //});
             });
-
+            //resultsColelction = resultsCollection.sort_by_release_date();
             var tableView = new rateApp.TableView({
-                collection: resultsCollection
+                collection: tempResultsCollection
             });
 
             $(".tableResultsHolder").html("").append(tableView.render().$el);
