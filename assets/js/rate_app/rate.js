@@ -391,7 +391,7 @@ function findMovieById(tmdbId){
             console.log("success find movie by id ");
             console.log(data);
         },
-        error: function() {
+        error: function(data) {
             console.log("error");
             console.log(data);
         }

@@ -54,6 +54,18 @@
         </div>
         <div class="space"></div>
     </script>
+    <script type="text/template" id="tableResultsTemplate">
+        <table class="table table-results table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="col1">Постер</th>
+                    <th class="col2">Название</th>
+                    <th class="col3">Год</th>
+                    <th class="col4">Пересечение</th>
+                </tr>
+            </thead>
+        </table>
+    </script>
     <script type="text/template" id="filmsTemplate">
         <div class="lefter">
             <img class="arrow_img left_arrow" src="assets/img/next152.png" alt="">
@@ -287,6 +299,8 @@
 
             <div class="row resultsPanel centered mt grid" style="position:relative"></div>
 
+            <div class="tableResultsHolder"></div>
+
         </div>
 
     </script>
@@ -435,14 +449,17 @@
     <script src="assets/js/rate_app/rate/models/appModel.js"></script>
     <script src="assets/js/rate_app/rate/models/personModel.js"></script>
     <script src="assets/js/rate_app/rate/models/personMovieCreditsModel.js"></script>
+    <script src="assets/js/rate_app/rate/models/movieCastModel.js"></script>
     <script src="assets/js/rate_app/rate/collections/personsCollection.js"></script>
     <script src="assets/js/rate_app/rate/collections/personMovieCreditsCollection.js"></script>
+    <script src="assets/js/rate_app/rate/collections/movieCastCollection.js"></script>
     <script src="assets/js/rate_app/rate/views/mainView.js"></script>
     <script src="assets/js/rate_app/rate/views/filmsView.js"></script>
     <script src="assets/js/rate_app/rate/views/booksView.js"></script>
     <script src="assets/js/rate_app/rate/views/gamesView.js"></script>
     <script src="assets/js/rate_app/rate/views/dailyFilmsView.js"></script>
     <script src="assets/js/rate_app/rate/views/wishlistView.js"></script>
+    <script src="assets/js/rate_app/rate/views/tableResultsView.js"></script>
     <script src="assets/js/rate_app/data.js"></script>
     <script src="assets/js/rate_app/rate.js"></script>
 </body>
