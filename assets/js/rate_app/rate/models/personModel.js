@@ -1,5 +1,7 @@
 var rateApp = rateApp || {}
 
+
+// item from list getted by http://api.themoviedb.org/3/search/person?api_key=37662c76ffc19e5cd1b95f37d77155fc&query=Chl where "Clo" is inserted value by user
 rateApp.PersonModel = Backbone.Model.extend({
 
 	defaults: {

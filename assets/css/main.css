@@ -590,7 +590,7 @@ button.navbar-toggle {
 .actorBlock {
     width: 140px;
     float: left;
-    height: 200px;
+    height: 270px;
     border-radius: 5px;
     margin: 0 10px;
     position: relative;
@@ -605,7 +605,8 @@ button.navbar-toggle {
 .actorBlock.no-image {
     background: url(../img/new/no-image-small.jpg) no-repeat;
     background-size: 100%;
-    margin: 10px;
+    background-position-y: 10px;
+    background-size: 130px 180px;
 }
 
 #searchclear {
@@ -660,6 +661,14 @@ button.navbar-toggle {
 }
 .results-poster{
     height: 170px;
+}
+
+.intersectionImage {
+    padding: 0 10px;
+    width: 70px;
+}
+td.intersectionImageCell {
+    vertical-align: middle !important;
 }
 
 /* Wishlist */

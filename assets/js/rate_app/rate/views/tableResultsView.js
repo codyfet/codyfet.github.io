@@ -1,6 +1,6 @@
 var rateApp = rateApp || {}
 
-var rowTemplate = "<tr><td class='name'><img class='results-poster' src='<%= poster_path %>'></td><td class='age'><%= title %></td><td class='year'><%= release_date %></td><td class='age'>пересечение</td></tr>";
+var rowTemplate = "<tr><td class='name'><img class='results-poster' src='<%= poster_path %>'></td><td class='age'><%= title %></td><td class='year'><%= release_date %></td><td class='intersectionImageCell'><% $.each(actorsArray, function(index, model){ var imagePath = $('#actorid_'+model).find('img').attr('src'); %> <img class='intersectionImage' src=<%= imagePath %>> <%}); %></td></tr>";
 
 rateApp.TableView = Backbone.View.extend({
     tagName: $("#tableResultsTemplate").html(),
@@ -8,8 +8,8 @@ rateApp.TableView = Backbone.View.extend({
         _.bindAll(this, 'render', 'renderOne');
         //if (this.model) {
         this.collection.on('change reset add remove', this.render, this);
-        this.collection.sort_by_release_date()
-        console.log("COLLECTION INIT");
+        //this.collection.sort_by_release_date()
+        this.collection.sort_by_actors_count();
         //}
     },
     render: function () {
@@ -36,7 +36,9 @@ var RowView = Backbone.View.extend({
     },
     //model: peopleCollection.models,
     render: function () {
-         var html=_.template(rowTemplate,this.model.attributes.toJSON());
+        console.log("this.model.attributes");
+        console.log(this.model.attributes);
+         var html=_.template(rowTemplate,this.model.attributes);
          this.setElement( $(html) );
          return this;
     },
