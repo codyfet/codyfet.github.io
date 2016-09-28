@@ -1,7 +1,7 @@
 # mylists
 My movies, games and books.
 
-Based on this wonderful template http://www.blacktie.co/2013/11/bolt-flat-one-page-theme/.
+http://codyfet.github.io
 
 Used:
 
@@ -10,5 +10,3 @@ Used:
   backbone.js
   slick.js
   DataTables
-
-
