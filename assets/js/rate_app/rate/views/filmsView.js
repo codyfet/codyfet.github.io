@@ -152,7 +152,8 @@ rateApp.FilmsView = Backbone.View.extend({
 
         var series13 = multi.films.year2013.series;
         var series15 = multi.films.year2015.series;
-        var series = $.merge(series13, series15);
+        var series16 = multi.films.year2016.series;
+        var series = $.extend([], series13, series15, series16);
 
         $.each(series, function(index, item){
             var imdbId = item.imdbId;
